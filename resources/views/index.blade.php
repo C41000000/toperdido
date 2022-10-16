@@ -18,7 +18,7 @@
       // Map options
       var options = {
         zoom:8,
-        center:{lat:-19.7906386,lng:-42.1418617}
+        center:{lat:-19.7858502,lng:-42.1471111}
       }
 
       // New map
