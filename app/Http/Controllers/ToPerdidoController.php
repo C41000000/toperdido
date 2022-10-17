@@ -5,6 +5,10 @@ use Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Locais;
+use App\Models\Rua;
+use App\Models\Bairro;
+
+
 
 use Illuminate\Http\Request;
 
@@ -46,8 +50,39 @@ class ToPerdidoController extends Controller
 
     public function buscaLocal(Request $request){
         $locais = new Locais();
-
+        
         $local = $locais->retornaInformacoes($request->all());
-        return $local;
+        if(!$local){
+            $local = $this->criaCoisas($request->all());   
+        }
+        return view('local');
+    }
+
+
+    private function criaCoisas($dados){
+        $nome = $dados['endereco0'];
+        $rua = explode('-', $dados['endereco1'])[0];
+        $bairro = explode('-', $dados['endereco1'])[1];
+
+        $bairro = Bairro::create([
+            'bairro_nome' => $bairro,
+            'cidade_id' => 1,
+
+        ]);
+        
+        $rua = Rua::create([
+            'bairro_id' => $bairro['id'],
+            'rua_nome' => $rua,
+            'cep' => '000000-00'
+
+        ]);
+
+        $locais = Locais::create([
+            'nome' => $nome,
+            'rua_id' => $rua['id'],
+            'img' => ''
+        ]);
+        
+        return $locais;
     }
 }
