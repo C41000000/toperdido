@@ -14,13 +14,13 @@ class Locais extends Model
     public $timestamps = false;
 
     public function retornaInformacoes($dados){
-        dd($dados);
+        
         $nome = $dados['endereco0'];
-        $rua = explode('-', $dados['endereco1'])[0];
-        $bairro = explode('-', $dados['endereco1'])[1];
-        $cidade = explode('-', $dados['endereco2'])[0];
-        $estado = explode('-', $dados['endereco2'])[1];
-        $pais = $dados['endereco3'];
+        $rua = trim(explode('-', $dados['endereco1'])[0]);
+        $bairro = trim(explode('-', $dados['endereco1'])[1]);
+        $cidade = trim(explode('-', $dados['endereco2'])[0]);
+        $estado = trim(explode('-', $dados['endereco2'])[1]);
+        $pais = trim($dados['endereco3']);
         $sql = "
             SELECT
                 *
@@ -37,7 +37,7 @@ class Locais extends Model
             AND e.sigla = '{$estado}'
         ";
         $local = DB::select($sql);
-
+        
         return $local;
 
     }

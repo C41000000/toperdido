@@ -4,9 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Facades\DB;
 class Estado extends Model
 {
     use HasFactory;
     protected $table = "estado";
+
+
+    public function retornaEstadoPelaSigla($sigla){
+        $sql = "
+            SELECT 
+                *
+            FROM estado
+            WHERE sigla = '{$sigla}' 
+        ";
+
+        return DB::select($sql);
+    }
 }

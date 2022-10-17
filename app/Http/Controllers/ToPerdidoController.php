@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Locais;
 use App\Models\Rua;
 use App\Models\Bairro;
+use App\Models\Cidade;
+use App\Models\Estado;
 
 
 
@@ -55,34 +57,69 @@ class ToPerdidoController extends Controller
         if(!$local){
             $local = $this->criaCoisas($request->all());   
         }
-        return view('local');
+        return view('local', [
+            'local' => $local
+        ]);
     }
 
 
     private function criaCoisas($dados){
-        $nome = $dados['endereco0'];
-        $rua = explode('-', $dados['endereco1'])[0];
-        $bairro = explode('-', $dados['endereco1'])[1];
-
-        $bairro = Bairro::create([
-            'bairro_nome' => $bairro,
-            'cidade_id' => 1,
-
-        ]);
         
-        $rua = Rua::create([
-            'bairro_id' => $bairro['id'],
-            'rua_nome' => $rua,
-            'cep' => '000000-00'
+        $model_bairro = new Bairro();
+        $model_rua = new Rua();
+        $model_cidade = new Cidade();
+        $model_estado = new Estado();
 
-        ]);
+        $nome = $dados['endereco0'];
+        $rua = trim(explode('-', $dados['endereco1'])[0]);
+        $bairro = trim(explode('-', $dados['endereco1'])[1]);
+        $cidade = trim(explode('-', $dados['endereco2'])[0]);
+        
+        $sigla = trim(explode('-',$dados['endereco2'])[1]);
 
+        if(!$cidade_criada = $model_cidade->retornaCidade($cidade, $sigla)){
+            $estado = $model_estado->retornaEstadoPelaSigla($sigla);
+            $estado = array_shift($estado);
+            $cidade_criada = Cidade::create([
+                'estado_id' => $estado->estado_id,
+                'cidade_nome' => $cidade
+            ]);
+        }
+        $this->pr($cidade_criada);
+        
+        if(!$bairro_criado = $model_bairro->retornaBairro($bairro, $cidade_criada['cidade_id'])){
+            
+            $bairro_criado = Bairro::create([
+                'bairro_nome' => $bairro,
+                'cidade_id' => $cidade_criada['cidade_id'],
+    
+            ]);
+        }
+        
+        if(!$rua_criada = $model_rua->retornaRua($rua, $bairro_criado['bairro_id'])){
+            $rua_criada = Rua::create([
+                'bairro_id' => $bairro['bairro_id'],
+                'rua_nome' => $rua,
+                'cep' => '000000-00'
+    
+            ]);
+        }
+        
         $locais = Locais::create([
             'nome' => $nome,
-            'rua_id' => $rua['id'],
+            'rua_id' => $rua_criada['rua_id'],
             'img' => ''
         ]);
         
         return $locais;
+    }
+
+
+    public function pr($string, $die = 1){
+        echo"<pre>";
+        print_r($string);
+        if($die){
+            die;
+        }
     }
 }

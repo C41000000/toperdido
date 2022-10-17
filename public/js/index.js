@@ -25,7 +25,7 @@ $(function(){
                 
             })
        }, 2000);
-       return false;
+       
        $("#formBusca").submit();
        
     //    return false;
