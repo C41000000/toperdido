@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ToPerdidoController;
 
 Route::get('/', [ToPerdidoController::class, 'index']);
-Route::get('/to-perdido/', [ToPerdidoController::class, 'login']);
+Route::get('/to-perdido', [ToPerdidoController::class, 'login']);
 
 /** 
  * {param} => parametro obrigatorio
