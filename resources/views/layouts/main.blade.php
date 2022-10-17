@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Roboto">
         <script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
-        
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <style>
             *{
@@ -22,14 +22,19 @@
         <div class='container-fluid'>
            <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="/index"><img id='logo' src="/img/logo.jpg"></a>
+                <a class="navbar-brand" href="/"><img id='logo' src="/img/logo.jpg"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="/index">Home</a>
-                    <a class="nav-item nav-link" href="/to-perdido/login">Login</a>
+                    <a class="nav-item nav-link active" href="/">Home</a>
+                    @auth
+                    <a class="nav-item nav-link" href="login">Logout</a>
+                        
+                    @endauth
+                    <a class="nav-item nav-link" href="login">Login</a>
+                    
                     <a class="nav-item nav-link" href="#">Preços</a>
                   </div>
                 </div>
@@ -69,7 +74,7 @@
 
                 <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
                 © @php echo date('Y') @endphp Copyright:
-                <a class="text-reset fw-bold" href="/index">Teste</a>
+                <a class="text-reset fw-bold" href="/">Teste</a>
                 </div>  
             </div>
             

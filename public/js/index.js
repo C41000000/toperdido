@@ -1,26 +1,29 @@
-$(document).ready(function(){
-    
-})
-
 $(function(){
     $("#map").click(function(){
     
-       let i = 0;
+       let i = 1;
        let array = new Array();
 
-       $('.address-line').each(function(){
-           
-           array[i] = $(this).text();
-           i++;
-       })
-
-       alert(array);
-       return false;
-        $.ajax({
-            url: '/buscas/retorna-local-json',
-            dataType: 'json',
-            data: {array},
-            method: 'POST',
-        })
+       setTimeout(function(){
+            array[0] = $(".title ").text();
+            $('.address-line').each(function(){
+                array[i] = $(this).text();
+                i++;
+            })
+       }, 1000)     
+       
+        
+       axios.post('/local', {
+        request: array,
+        
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+    
+        
     })
 })

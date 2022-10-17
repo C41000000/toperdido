@@ -9,13 +9,16 @@
         
     </div>
 </div>
-
+@if(!$_SESSION['aaaaaa'])
+   <p>morri</p>
+@endif
 <div id="form" >
 <div class="container-fluid align-bottom ">
     <div class="row">
         <div class="col-3"></div>
         <div class="col">
-            <form method="post" class="form text-dark" action="public/php/testeLogin.php" id="login_form">
+            <form method="post" class="form text-dark" action="{{route('teste')}}" id="login_form">
+                @csrf
                 Email
                 <br>
                 <input type="text" class="rounded" name="email">
