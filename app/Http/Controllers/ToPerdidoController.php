@@ -49,6 +49,5 @@ class ToPerdidoController extends Controller
 
         $local = $locais->retornaInformacoes($request->all());
         return $local;
-        return view('local');
     }
 }

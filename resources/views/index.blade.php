@@ -14,6 +14,8 @@
   <h1>Mapa</h1>
   <div id="map"></div>
   <script>
+
+
     function initMap(){
       // Map options
       var options = {

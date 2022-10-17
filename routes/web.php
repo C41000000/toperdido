@@ -18,7 +18,7 @@ use App\Http\Controllers\ToPerdidoController;
 Route::get('/', [ToPerdidoController::class, 'index'])->name('index');
 Route::get('/login', [ToPerdidoController::class, 'login'])->name('login');
 Route::post('/teste', [ToPerdidoController::class, 'doideira'])->name('teste');
-// Route::post('/local', [ToPerdidoController::class, 'buscaLocal'])->name('local');
+Route::post('/local', [ToPerdidoController::class, 'buscaLocal'])->name('local');
 
 /** 
  * {param} => parametro obrigatorio

@@ -4,14 +4,10 @@
 @section('content')
 <div class="jumbotron">
     <div class="container-fluid">
-        <h1 class="display-4">Login de Administrador</h1>
-        
-        
+        <h2 class="display-12">Login de Administrador</h2>        
     </div>
 </div>
-@if(!$_SESSION['aaaaaa'])
-   <p>morri</p>
-@endif
+
 <div id="form" >
 <div class="container-fluid align-bottom ">
     <div class="row">

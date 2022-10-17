@@ -18,4 +18,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/local', [ToPerdidoController::class, 'buscaLocal'])->name('local');
