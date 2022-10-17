@@ -16,20 +16,28 @@ $(function(){
             
             //laco pra pegar as informacoes do endereo (rua, numero, cep, etc)
             $('.address-line').each(function(){
-                dados[i] = $(this).text();
-                i++;
+                if($(this).text != ""){
+                    dados[i] = $(this).text();
+                    i++;
+                }
+                
             })
        }, 1000)     
+       console.log(dados);
+       if(dados.length > 1){
+            var form = "<form id='formBusca' action='/busca' method='POST'></form>";
+            $('body').append(form);
+            for(i =0; i < dados.length; i++){
+                $("#formBusca").append("<input type='text' name='"+i + "' value='" + dados[i] + "'>");
+            } 
+       }
+      
+        
+      
 
-       $.ajax({
-        url: '/local',
-        type: 'POST',
-        dataType: 'string',
-        data: {dados},
-        success:function(resposta){
-            console.log(resposta);
-        }
-       });
+      
+
+      $('body').append(form);
     })
 })
 
