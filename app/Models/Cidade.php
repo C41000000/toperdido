@@ -26,4 +26,6 @@ class Cidade extends Model
         return DB::select($sql);
 
     }
+
+    
 }

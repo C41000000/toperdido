@@ -99,7 +99,7 @@
                     <a class="nav-link" href="/">Album</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="indexCadastro">Login/Cadastro</a>
+                    <a class="nav-link" href="{{route('indexCadastro')}}">Login/Cadastro</a>
                   </li>
                 </ul>
                 <form class="d-flex" role="search">

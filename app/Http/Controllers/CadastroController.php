@@ -15,11 +15,21 @@ class CadastroController extends Controller
 {
 	public function index(){
 		$estado_model = new Estado();
+		$cidades = Cidade::all();
 		$estados = $estado_model->retornaTodosEstados();
-
-		return view('cadastro.index', 
-			['estados' => $estados]
+		// $cidades = $cidade_model->retornaTodasCidades();
+		
+		return view('cadastro.index', [
+			'estados' => $estados
+		
+		]
 		);
 	}
+
+	public function cadastrar(Request $request){
+		dd($request->all());
+	}
+
+
     
 }

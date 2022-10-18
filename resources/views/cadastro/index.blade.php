@@ -1,24 +1,29 @@
 @extends('layouts.main')
-@section('title', Cadastro')
+@section('title', 'Cadastro')
 
 @section("content")
 
 
 
 @php
-	dd($estados);
+	
 @endphp
 
-
-<form metho='post' enctype='multipart/form-data' action="cadastrarLocal">
+<div style='margin-top: 20%'>
+<form method='post' enctype='multipart/form-data' action="{{route('cadastrarLocal')}}">
 	@csrf
 	<select name='estado'>
 		<option value="">Selecione um estado</option>
-	@foreach(estados as estado)
-
+	@foreach($estados as $estado)
+		<option value='{{$estado->estado_id}}'>{{$estado->estado_nome}}</option>
 	@endforeach
-</form>
+	</select>
+	<input type='text' name='rua'>
+	<input type='text' name='nome'>
+	<button type='submit'>Salvar</button>
 
+</form>
+</div>
 
 
 
