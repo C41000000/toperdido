@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\ToPerdidoController;
+use App\Http\Controllers\CadastroController;
 
 Route::get('/', [ToPerdidoController::class, 'index'])->name('index');
 Route::get('/login', [ToPerdidoController::class, 'login'])->name('login');
 Route::post('/teste', [ToPerdidoController::class, 'doideira'])->name('teste');
 Route::post('/local', [ToPerdidoController::class, 'buscaLocal'])->name('local');
+Route::get('/cadastro', [CadastroController::class, 'index'])->name('indexCadastro');
 
 /** 
  * {param} => parametro obrigatorio

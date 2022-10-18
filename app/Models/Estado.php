@@ -21,4 +21,15 @@ class Estado extends Model
 
         return DB::select($sql);
     }
+
+    public function retornaTodosEstados(){
+        $sql = "
+            SELECT 
+                *
+            FROM estado
+            ORDER BY estado_nome
+        ";
+
+        return DB::select($sql);
+    }
 }
