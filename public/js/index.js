@@ -24,9 +24,9 @@ $(function(){
                 }
                 
             })
-       }, 2000);
+       }, 3000,  $("#formBusca").submit());
        
-       $("#formBusca").submit();
+      
        
     //    return false;
        

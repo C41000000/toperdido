@@ -97,7 +97,7 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/">Locais</a>
+                    <a class="nav-link" href="{{route('locais')}}">Locais</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('mapa')}}">Mapa</a>

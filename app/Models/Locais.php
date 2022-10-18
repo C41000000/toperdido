@@ -17,6 +17,7 @@ class Locais extends Model
         
         $nome = $dados['endereco0'];
         $rua = trim(explode('-', $dados['endereco1'])[0]);
+        dd($dados);
         $bairro = trim(explode('-', $dados['endereco1'])[1]);
         $cidade = trim(explode('-', $dados['endereco2'])[0]);
         $estado = trim(explode('-', $dados['endereco2'])[1]);
@@ -43,7 +44,25 @@ class Locais extends Model
 
     }
 
-    public function criaLocal($dados){
 
+    public function buscaSeisMelhoresDaCidade($cidade){
+        $sql = "
+        SELECT
+            l.local_id,
+            l.nome,
+            r.rua_nome,
+            b.bairro_nome,
+            c.cidade_nome,
+            l.img
+        FROM locais l
+        INNER JOIN rua r ON r.rua_id = l.rua_id
+        INNER JOIN bairro b ON b.bairro_id = r.bairro_id
+        INNER JOIN cidades c ON c.cidade_id = b.cidade_id
+        WHERE c.cidade_id = {$cidade}
+        ORDER BY l.nota DESC
+        LIMIT 6
+        ";
+        
+        return DB::select($sql);
     }
 }

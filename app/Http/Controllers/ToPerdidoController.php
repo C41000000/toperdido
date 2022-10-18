@@ -62,6 +62,20 @@ class ToPerdidoController extends Controller
         ]);
     }
 
+    public function locais($cidade = 147){
+        $locais_model = new Locais();
+        $cidade_model = new Cidade();
+        $cid = $cidade_model->retornaCidadePeloId($cidade);
+        $cid = array_shift($cid);
+        $todosLocais = $locais_model->buscaSeisMelhoresDaCidade($cidade);
+        
+        
+        return view('locais',[
+            'locais' => $todosLocais,
+            'cidade' => $cid
+
+        ]);
+    }
 
     private function criaCoisas($dados){
         

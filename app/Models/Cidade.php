@@ -27,5 +27,18 @@ class Cidade extends Model
 
     }
 
+    public function retornaCidadePeloId($cidade){
+
+        $sql = "
+            SELECT
+                c.*
+            FROM cidades c
+            WHERE c.cidade_id = {$cidade}
+            ";
+
+        return DB::select($sql);
+
+    }    
+
     
 }
