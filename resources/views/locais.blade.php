@@ -4,8 +4,7 @@
 @section('content')
 <style>
     body{
-        background-image: url('/img/andreas.jpg');
-        background-color: #cccccc;
+        
     }
 </style>
 <main>
@@ -41,7 +40,7 @@
 
               <div class="card-body">
                 <p class="card-text">{{$local->nome}}</p>
-                <p class="card-text">{{$local->rua_nome}} -{{$local->bairro_nome}}</p>
+                <p class="card-text">{{$local->rua_nome}} - {{$local->bairro_nome}}</p>
 
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
