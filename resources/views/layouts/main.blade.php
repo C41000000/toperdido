@@ -18,6 +18,7 @@
         <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
         <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
         <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+        <script src='/js/index.js'></script>
         <meta name="theme-color" content="#712cf9">
         <style>
             *{
@@ -96,10 +97,10 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/">Album</a>
+                    <a class="nav-link" href="/">Locais</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{route('indexCadastro')}}">Login/Cadastro</a>
+                    <a class="nav-link" href="{{route('mapa')}}">Mapa</a>
                   </li>
                 </ul>
                 <form class="d-flex" role="search">

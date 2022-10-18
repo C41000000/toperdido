@@ -36,6 +36,7 @@ class Locais extends Model
             AND c.cidade_nome = '{$cidade}'
             AND e.sigla = '{$estado}'
         ";
+        
         $local = DB::select($sql);
         
         return $local;

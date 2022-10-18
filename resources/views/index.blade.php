@@ -65,14 +65,7 @@
       </button>
     </div>
 
-    <div id="map"></div>
-    <form id='formBusca' action='/local' method='POST'>
-    @csrf
-    <input type='hidden' name='endereco0' value=''>
-    <input type='hidden' name='endereco1' value=''>
-    <input type='hidden' name='endereco2' value=''>
-    <input type='hidden' name='endereco3' value=''>
-    </form>
+
   
   
     <!-- Marketing messaging and featurettes

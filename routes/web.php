@@ -20,9 +20,9 @@ Route::get('/', [ToPerdidoController::class, 'index'])->name('index');
 Route::get('/login', [ToPerdidoController::class, 'login'])->name('login');
 Route::post('/teste', [ToPerdidoController::class, 'doideira'])->name('teste');
 Route::post('/local', [ToPerdidoController::class, 'buscaLocal'])->name('local');
-Route::get('/cadastro-index', [CadastroController::class, 'index'])->name('indexCadastro');
-Route::post('/cadastrar', [CadastroController::class, 'cadastrar'])->name('cadastrarLocal');
-
+Route::get('/mapa', function(){
+    return view('mapa');
+})->name('mapa');
 /** 
  * {param} => parametro obrigatorio
  * {param?} => parametro opcional

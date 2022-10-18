@@ -76,38 +76,53 @@ class ToPerdidoController extends Controller
         $cidade = trim(explode('-', $dados['endereco2'])[0]);
         
         $sigla = trim(explode('-',$dados['endereco2'])[1]);
-
-        if(!$cidade_criada = $model_cidade->retornaCidade($cidade, $sigla)){
+        $cidade_criada = $model_cidade->retornaCidade($cidade, $sigla);
+        
+        if(!$cidade_criada){
+            
             $estado = $model_estado->retornaEstadoPelaSigla($sigla);
             $estado = array_shift($estado);
+            
             $cidade_criada = Cidade::create([
                 'estado_id' => $estado->estado_id,
                 'cidade_nome' => $cidade
             ]);
         }
-        $this->pr($cidade_criada);
         
-        if(!$bairro_criado = $model_bairro->retornaBairro($bairro, $cidade_criada['cidade_id'])){
-            
+        
+        
+        $cidade_criada = array_shift($cidade_criada);
+        $cid = (!is_object($cidade_criada) && isset($cidade_criada['cidade_id'])) ? $cidade_criada['cidade_id']: $cidade_criada->cidade_id;
+        $bairro_criado = $model_bairro->retornaBairro($bairro, $cid);
+        
+        if(!$bairro_criado){
+
             $bairro_criado = Bairro::create([
                 'bairro_nome' => $bairro,
-                'cidade_id' => $cidade_criada['cidade_id'],
+                'cidade_id' => $cid,
     
             ]);
         }
+            
+        $bairro = (!is_object($bairro_criado) && isset($bairro_criado['bairro_id']))? $bairro_criado['bairro_id'] : $bairro_criado->bairro_id;
+        $bairro = $bairro_criado['id'] ? $bairro_criado['id'] : $bairro;
+        $rua_criada = $model_rua->retornaRua($rua, $bairro);
         
-        if(!$rua_criada = $model_rua->retornaRua($rua, $bairro_criado['bairro_id'])){
+        if(!$rua_criada){
             $rua_criada = Rua::create([
-                'bairro_id' => $bairro['bairro_id'],
+                'bairro_id' => $bairro,
                 'rua_nome' => $rua,
                 'cep' => '000000-00'
     
             ]);
         }
+
+        $rua_id = (!is_object($rua_criada) && isset($rua_criada['rua_id'])) ? $rua_criada['rua_id'] : $rua_criada->rua_id;
+        $rua_id = $rua_criada['id'] ? $rua_criada['id'] : $rua_id; 
         
         $locais = Locais::create([
             'nome' => $nome,
-            'rua_id' => $rua_criada['rua_id'],
+            'rua_id' => $rua_id,
             'img' => ''
         ]);
         
