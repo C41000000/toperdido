@@ -10,6 +10,7 @@ class Bairro extends Model
     use HasFactory;
     protected $fillable = ['cidade_id', 'bairro_nome'];
     protected $table = "bairro";
+    public $timestamps = false;
 
     public function retornaBairro($bairro, $cidade){
         $barrio = trim($bairro);

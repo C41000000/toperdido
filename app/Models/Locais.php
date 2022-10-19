@@ -10,14 +10,19 @@ class Locais extends Model
 {
     use HasFactory;
     protected $table = "locais";
-    protected $fillable = ['nome', 'rua_id', 'img'];
+    protected $fillable = ['nome', 'rua_id', 'img', 'numero'];
     public $timestamps = false;
 
     public function retornaInformacoes($dados){
         
         $nome = $dados['endereco0'];
-        $rua = trim(explode('-', $dados['endereco1'])[0]);
-        dd($dados);
+        $rua_e_numero = trim(explode('-',$dados['endereco1'])[0]);
+        $rua = trim(explode(",", $rua_e_numero)[0]);
+        $numero = trim(explode(",", $rua_e_numero)[1]);
+
+        
+        
+        
         $bairro = trim(explode('-', $dados['endereco1'])[1]);
         $cidade = trim(explode('-', $dados['endereco2'])[0]);
         $estado = trim(explode('-', $dados['endereco2'])[1]);
@@ -36,6 +41,7 @@ class Locais extends Model
             AND b.bairro_nome = '{$bairro}'
             AND c.cidade_nome = '{$cidade}'
             AND e.sigla = '{$estado}'
+            AND l.numero = '{$numero}'
         ";
         
         $local = DB::select($sql);

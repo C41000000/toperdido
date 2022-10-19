@@ -8,18 +8,38 @@ $(function(){
     $("#map").click(function(){
     
         let tentaAcharConteudo = setInterval(function () {
-
-            let conteudo = salvaDados();
-            console.log(conteudo);
-            if(conteudo){
+            let tem_conteudo;
+            if($("#map").length < 1){
+               tem_conteudo =  false;
+            }else{
+                tem_conteudo =  true;
+            }
+            console.log( $('.address-line').first());
+            debugger;
+            if(tem_conteudo){
+                
+                let i = 1;
+                //pegando o nome do local
+                $("[name=endereco0]").val($(".title ").text());
+                
+                //laco pra pegar as informacoes do endereo (rua, numero, cep, etc)
+                $('.address').find('.address-line ').each(function(){
+                    
+                    if($(this).text != ""){
+                        
+                        $('[name=endereco' + i + ']').val($(this).text());
+                        i++;
+                    }
+                    console.log('[name=endereco' + i + ']');
+                    
+                })
+               
                 //achei um conteúdo válido
-        
+
                 $('#formBusca').submit();
                 //fazer o que tem de fazer
                 clearInterval(tentaAcharConteudo);
-        
             }
-        
         }, 1000);
         
      
@@ -46,30 +66,7 @@ $(function(){
     });
 })
 
-function salvaDados(){
 
-    if($("#map").length < 1){
-        return false;
-    }
-    setTimeout(function(){
-        let i = 1;
-        //pegando o nome do local
-        $("[name=endereco0]").val($(".title ").text());
-        
-        //laco pra pegar as informacoes do endereo (rua, numero, cep, etc)
-        $('.address-line').each(function(){
-            if($(this).text != ""){
-                
-                $('[name=endereco' + i + ']').val($(this).text());
-                i++;
-            }
-            
-        })
-   }, 3000);
-   
-   return true;
-   
-}
 
 $(document).ready(function(){
     $('#cidNome').val('');
