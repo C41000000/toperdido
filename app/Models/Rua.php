@@ -11,6 +11,7 @@ class Rua extends Model
     protected $table = "rua";
     protected $fillable = ['bairro_id', 'rua_nome', 'cep'];
     public $timestamps = false;
+    protected $primaryKey = "rua_id";
 
     public function retornaRua($rua, $bairro){
         $rua = trim($rua);

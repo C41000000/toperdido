@@ -16,7 +16,6 @@ return new class extends Migration
     {
         Schema::create('bairro', function (Blueprint $table) {
             $table->id('bairro_id');
-            $table->timestamps();
             $table->foreignIdFor(Cidade::class)->references('cidade_id')->on('cidades');
             $table->string("bairro_nome");
         });

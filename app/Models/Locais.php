@@ -65,4 +65,8 @@ class Locais extends Model
         
         return DB::select($sql);
     }
+
+    public function rua(){
+        return $this->hasOne(Rua::class);
+    }
 }

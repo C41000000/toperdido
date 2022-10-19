@@ -13,9 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cidades', function (Blueprint $table) {
-            $table->dropColumn(['created_at', 'updated_at']);
-        });
+
     }
 
     /**
@@ -25,6 +23,8 @@ return new class extends Migration
      */
     public function down()
     {
-
+        Schema::create('cidades', function (Blueprint $table) {
+            $table->dropColumn(['created_at', 'updated_at']);
+        });
     }
 };

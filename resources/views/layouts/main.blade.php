@@ -30,8 +30,8 @@
 
             #autocomplete{
               position: absolute;
-              width: 17%;
-              margin-top: 3%;
+              width: 200px;
+              margin-top: 40px;
               margin-right: .5rem !important;
               display: block;
               overflow: auto;
@@ -45,10 +45,11 @@
               background-clip: padding-box;
               border: 1px solid #ced4da;
               padding: 0px !important;
+              /* max-width: inherit; */
             }
             @media only screen and (max-width: 760px){
               #autocomplete{
-                width: 70%;
+                /* width: 70%;git */
                 margin-top: 10%;
               }
             }
@@ -104,6 +105,12 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      #cidNome{
+        height:40px;
+        width: 200px;
+      }
+
     </style>
         <link href="/css/layouts/main.css" rel="stylesheet">
     <head>
@@ -128,14 +135,17 @@
                     <a class="nav-link" href="{{route('mapa')}}">Mapa</a>
                   </li>
                 </ul>
-                <form class="d-flex" role="search">
-                  @csrf
-                  <input name='cidade' id='cidNome' class="form-control me-2" type="text" placeholder="Procure uma cidade" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Buscar</button>
-                  <div multiple="multiple" id='autocomplete' style="display: none;" class='list-group'>
+                <div class="d-flex">
+                  <form class='d-flex'  role="search">
+                    @csrf
+                    <input name='cidade' id='cidNome' class="form-control me-2" type="text" placeholder="Procure uma cidade" aria-label="Search">
+                    {{-- <button id='busca' class="btn btn-outline-success" type="submit">Buscar</button> --}}
+                    <div multiple="multiple" id='autocomplete' style="display: none;" class='list-group'>
+  
+                    </div>    
+                  </form>
+                </div>
 
-                  </div>    
-                </form>
               </div>
           
             </div>

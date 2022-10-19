@@ -31,7 +31,7 @@ $(function(){
         $('#autocomplete').empty();
         $('#autocomplete').css('display', 'none');
         nome = $(this).val();
-        if(nome.length > 4){
+        if(nome.length > 2){
             $.get('/busca/'+nome, function(resposta){
                 if(resposta.length > 0){
                     $('#autocomplete').css('display', 'block');
