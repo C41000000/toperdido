@@ -235,8 +235,6 @@
       }
     }
   </script>
-   <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAngG_XRRSBImRIqXVqR3sp1ORp-3zYlTQ&callback=initMap">
-  </script> 
+  
   
 @endsection

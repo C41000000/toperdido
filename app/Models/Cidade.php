@@ -38,7 +38,19 @@ class Cidade extends Model
 
         return DB::select($sql);
 
-    }    
+    }
+    
+    public function buscaCidadesPeloNome($nome){
+        $sql = "
+            SELECT
+                cidade_nome,
+                cidade_id
+            FROM cidades
+            WHERE cidade_nome LIKE '{$nome}%'
+        ";
+
+        return DB::select($sql);
+    }
 
     
 }

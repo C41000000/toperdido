@@ -11,13 +11,13 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
-        <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-        <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-        <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+        {{-- <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> --}}
+        {{-- <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180"> --}}
+        {{-- <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
         <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
         <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
         <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-        <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+        <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico"> --}}
         <script src='/js/index.js'></script>
         <meta name="theme-color" content="#712cf9">
         <style>
@@ -26,6 +26,31 @@
             }
             #logo{
                 width: 55px;
+            }
+
+            #autocomplete{
+              position: absolute;
+              width: 17%;
+              margin-top: 3%;
+              margin-right: .5rem !important;
+              display: block;
+              overflow: auto;
+              max-height: 50vh;
+              padding: .375rem .75rem;
+              font-size: 1rem;
+              font-weight: 400;
+              line-height: 1.5;
+              color: #212529;
+              background-color: #fff;
+              background-clip: padding-box;
+              border: 1px solid #ced4da;
+              padding: 0px !important;
+            }
+            @media only screen and (max-width: 760px){
+              #autocomplete{
+                width: 70%;
+                margin-top: 10%;
+              }
             }
         </style>
   <style>
@@ -80,7 +105,7 @@
         -webkit-overflow-scrolling: touch;
       }
     </style>
-        <link href="/css/main.css" rel="stylesheet">
+        <link href="/css/layouts/main.css" rel="stylesheet">
     <head>
     <body>
         <div class='container-fluid'>
@@ -104,10 +129,15 @@
                   </li>
                 </ul>
                 <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Procurar</button>
+                  @csrf
+                  <input name='cidade' id='cidNome' class="form-control me-2" type="text" placeholder="Procure uma cidade" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                  <div multiple="multiple" id='autocomplete' style="display: none;" class='list-group'>
+
+                  </div>    
                 </form>
               </div>
+          
             </div>
           </nav>
         </header>

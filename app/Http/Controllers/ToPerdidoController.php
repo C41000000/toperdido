@@ -25,31 +25,6 @@ class ToPerdidoController extends Controller
         return view('to-perdido.login');
     }
 
-    public function doideira(Request $request){
-        
-        $usuario = $request['email'];
-        $senha = $request['senha'];
-        
-        if (Auth::validate(['email' => $usuario, 'password' => $senha]))
-        {   
-            $_SESSION = ['aaaaaa' => true];
-
-            return redirect()->intended('/');
-        }else{
-            // $user = [
-            //     'name' => $usuario,
-            //     'email' => $usuario,
-            //     'password' => Hash::make($senha)
-            // ];
-    
-            // $user = User::create($user);
-            
-            return redirect()->route('login')->with('uai', 'uai2');
-        }
-
-
-    }
-
     public function buscaLocal(Request $request){
         $locais = new Locais();
         
@@ -62,7 +37,7 @@ class ToPerdidoController extends Controller
         ]);
     }
 
-    public function locais($cidade = 147){
+    public function locais($cidade = 1687){
         $locais_model = new Locais();
         $cidade_model = new Cidade();
         $cid = $cidade_model->retornaCidadePeloId($cidade);
@@ -75,6 +50,13 @@ class ToPerdidoController extends Controller
             'cidade' => $cid
 
         ]);
+    }
+
+    public function buscaCidadesJson($nome){
+        $cidade_model = new Cidade();
+
+        return $cidade_model->buscaCidadesPeloNome($nome);
+
     }
 
     private function criaCoisas($dados){
@@ -142,6 +124,7 @@ class ToPerdidoController extends Controller
         
         return $locais;
     }
+
 
 
     public function pr($string, $die = 1){
