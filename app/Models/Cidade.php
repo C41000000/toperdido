@@ -9,7 +9,7 @@ class Cidade extends Model
 {
     use HasFactory;
     protected $fillable = ['cidade_nome', 'estado_id'];
-
+    public $timestamps = false;
 
     public function retornaCidade($cidade, $estado){
 

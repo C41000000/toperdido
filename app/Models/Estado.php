@@ -9,7 +9,7 @@ class Estado extends Model
 {
     use HasFactory;
     protected $table = "estado";
-
+    public $timestamps = false;
 
     public function retornaEstadoPelaSigla($sigla){
         $sql = "

@@ -132,7 +132,7 @@ class ToPerdidoController extends Controller
 
     public function detalhes($local){
         $dados = Locais::where('local_id', $local)->first();
-        dd($dados->rua);
+        // dd($dados->rua);
     }
     public function pr($string, $die = 1){
         echo"<pre>";
