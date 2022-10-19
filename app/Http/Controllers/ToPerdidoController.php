@@ -113,10 +113,14 @@ class ToPerdidoController extends Controller
                 'cidade_id' => $cid,
     
             ]);
+          
         }
-            
-        $bairro = (!is_object($bairro_criado) && isset($bairro_criado['bairro_id']))? $bairro_criado['bairro_id'] : $bairro_criado->bairro_id;
-        $bairro = $bairro_criado['id'] ? $bairro_criado['id'] : $bairro;
+        $this->pr($bairro_criado);
+        $bairro_criado = array_shift($bairro_criado);
+        
+            // $this->pr($bairro_criado);
+        $bairro = $bairro_criado->bairro_id;
+        // $bairro = $bairro_criado['id'] ? $bairro_criado['id'] : $bairro;
         $rua_criada = $model_rua->retornaRua($rua, $bairro);
         
         if(!$rua_criada){
