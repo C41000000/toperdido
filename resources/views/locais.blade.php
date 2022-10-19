@@ -23,10 +23,12 @@
          
         </div>
       </div>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Procure por um local específico" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Procurar</button>
-      </form>
+      @if($locais)
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Procure por um local específico" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Procurar</button>
+        </form>
+      @endif
     </section>
     
     @if($locais)
