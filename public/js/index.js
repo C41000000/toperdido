@@ -6,7 +6,8 @@ $(function(){
         }
     });
     $("#map").click(function(){
-    
+        // debugger;
+
         let tentaAcharConteudo = setInterval(function () {
             let tem_conteudo;
             if($("#map").length < 1){
@@ -15,9 +16,12 @@ $(function(){
                 tem_conteudo =  true;
             }
             console.log( $('.address-line').first());
-            debugger;
+            
             if(tem_conteudo){
-                
+                if($(".address").first().text() == ""){
+                    console.log($(".address").first().text());
+                    return false;
+                }
                 let i = 1;
                 //pegando o nome do local
                 $("[name=endereco0]").val($(".title ").text());

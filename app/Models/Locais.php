@@ -17,13 +17,22 @@ class Locais extends Model
         
         $nome = $dados['endereco0'];
         $rua_e_numero = trim(explode('-',$dados['endereco1'])[0]);
-        $rua = trim(explode(",", $rua_e_numero)[0]);
-        $numero = trim(explode(",", $rua_e_numero)[1]);
-
+        $rua = str_replace("Zona Rural", "", trim(explode(",", $rua_e_numero)[0]));
+        $teste = explode(",", $rua_e_numero);
         
+        if(isset($teste[1])){
+            $numero = trim(explode(",", $rua_e_numero)[1]);
+        }else{
+            $numero = 0;
+        }
         
+        $teste_bairro = explode('-', $dados['endereco1']);
+        if(isset($teste_bairro[1])){
+            $bairro = trim(explode('-', $dados['endereco1'])[1]);
+        }else{
+            $bairro = "Zona Rural";
+        }
         
-        $bairro = trim(explode('-', $dados['endereco1'])[1]);
         $cidade = trim(explode('-', $dados['endereco2'])[0]);
         $estado = trim(explode('-', $dados['endereco2'])[1]);
         $pais = trim($dados['endereco3']);

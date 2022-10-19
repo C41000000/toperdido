@@ -68,10 +68,22 @@ class ToPerdidoController extends Controller
 
         $nome = $dados['endereco0'];
         $rua = trim(explode('-', $dados['endereco1'])[0]);
-        $numero = trim(explode(',', $rua)[1]);
+        $teste = explode(',', $rua);
+        if(isset($teste[1])){
+            $numero = trim(explode(',', $rua)[1]);
+        }else{
+            $numero = 0;
+        }
         $rua = trim(explode(',', $rua)[0]);
+        $teste_bairro = explode('-', $dados['endereco1']);
+        if(isset($teste_bairro[1])){
+            $bairro = trim(explode('-', $dados['endereco1'])[1]);
+        }else{
+            $bairro = "Zona Rural";
+        }
         
-        $bairro = trim(explode('-', $dados['endereco1'])[1]);
+        
+        
         $cidade = trim(explode('-', $dados['endereco2'])[0]);
         
         $sigla = trim(explode('-',$dados['endereco2'])[1]);
