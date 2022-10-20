@@ -16,7 +16,7 @@ class Locais extends Model
 
     public function retornaInformacoes($dados){
         
-        $nome = $dados['endereco0'];
+        $nome = str_replace("'", " ",$dados['endereco0']);
         $rua_e_numero = trim(explode('-',$dados['endereco1'])[0]);
         $rua = str_replace("Zona Rural", "", trim(explode(",", $rua_e_numero)[0]));
         $teste = explode(",", $rua_e_numero);

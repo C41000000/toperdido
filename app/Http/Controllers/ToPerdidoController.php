@@ -32,8 +32,9 @@ class ToPerdidoController extends Controller
         if(!$local){
             $local = $this->criaCoisas($request->all());   
         }
-        return view('local', [
-            'local' => $local
+        
+        return view('detalhes', [
+            'dados' => array_shift($local)
         ]);
     }
 
@@ -113,6 +114,7 @@ class ToPerdidoController extends Controller
                 'cidade_id' => $cid,
     
             ]);
+            $bairro_criado = array_shift($bairro_criado->attributes());
           
         }
         
@@ -130,6 +132,7 @@ class ToPerdidoController extends Controller
                 'cep' => '000000-00'
     
             ]);
+            $rua_id = array_shift($rua_criada->attributes());
         }
 
         $rua_id = (!is_object($rua_criada) && isset($rua_criada['rua_id'])) ? $rua_criada['rua_id'] : $rua_criada->rua_id;
@@ -138,10 +141,10 @@ class ToPerdidoController extends Controller
         $locais = Locais::create([
             'nome' => $nome,
             'rua_id' => $rua_id,
-            'img' => '',
+            'img' => '/img/global-settings.png',
             'numero' => $numero
         ]);
-        
+        $locais = array_shift($locais->attributes());
         return $locais;
     }
 
