@@ -115,7 +115,7 @@ class ToPerdidoController extends Controller
             ]);
           
         }
-        $this->pr($bairro_criado);
+        
         $bairro_criado = array_shift($bairro_criado);
         
             // $this->pr($bairro_criado);
@@ -147,9 +147,22 @@ class ToPerdidoController extends Controller
 
 
     public function detalhes($local){
-        $dados = Locais::where('local_id', $local)->first();
-        // dd($dados->rua);
+        $model_local = new locais();
+        
+        $dados = $model_local->bucasDadosLocal($local);
+        
+        return view('detalhes',[
+            'dados' => array_shift($dados)
+        ]);
     }
+
+    public function buscaLocaisAutocomplete($local){
+        $locais_model = new Locais();
+
+        return $locais_model->buscaLocalPeloNome($local);
+
+    }
+
     public function pr($string, $die = 1){
         echo"<pre>";
         print_r($string);

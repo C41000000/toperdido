@@ -12,6 +12,7 @@ class Locais extends Model
     protected $table = "locais";
     protected $fillable = ['nome', 'rua_id', 'img', 'numero'];
     public $timestamps = false;
+    protected $primaryKey = "local_id";
 
     public function retornaInformacoes($dados){
         
@@ -68,7 +69,8 @@ class Locais extends Model
             r.rua_nome,
             b.bairro_nome,
             c.cidade_nome,
-            l.img
+            l.img,
+            l.numero
         FROM locais l
         INNER JOIN rua r ON r.rua_id = l.rua_id
         INNER JOIN bairro b ON b.bairro_id = r.bairro_id
@@ -79,6 +81,44 @@ class Locais extends Model
         ";
         
         return DB::select($sql);
+    }
+
+    public function bucasDadosLocal($local){
+        $sql = "
+            SELECT
+                l.nome,
+                l.numero,
+                l.img,
+                c.cidade_nome,
+                b.bairro_nome
+            FROM locais l 
+            INNER JOIN rua r ON r.rua_id = l.rua_id
+            INNER JOIN bairro b ON b.bairro_id = r.bairro_id
+            INNER JOIN cidades c ON c.cidade_id = b.cidade_id
+            INNER JOIN estado e ON e.estado_id = c.estado_id
+            INNER JOIN pais p ON p.pais_id = e.pais_id
+            WHERE l.local_id = {$local}
+        ";
+
+        return DB::select($sql);
+    }
+
+    public function buscaLocalPeloNome($local){
+        $sql = "
+        SELECT
+           l.local_id,
+           l.nome,
+           r.rua_nome
+        FROM locais l 
+        INNER JOIN rua r ON r.rua_id = l.rua_id
+        INNER JOIN bairro b ON b.bairro_id = r.bairro_id
+        INNER JOIN cidades c ON c.cidade_id = b.cidade_id
+        INNER JOIN estado e ON e.estado_id = c.estado_id
+        INNER JOIN pais p ON p.pais_id = e.pais_id
+        WHERE l.nome LIKE '%{$local}%'
+    ";
+
+    return DB::select($sql);
     }
 
     public function rua(){
