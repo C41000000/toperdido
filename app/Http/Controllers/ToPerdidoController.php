@@ -52,7 +52,7 @@ class ToPerdidoController extends Controller
         ]);
     }
 
-    public function buscaCidadesJson($nome){
+    public function buscaCidades($nome){
         $cidade_model = new Cidade();
 
         return $cidade_model->buscaCidadesPeloNome($nome);

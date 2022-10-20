@@ -19,7 +19,7 @@ use App\Http\Controllers\CadastroController;
 Route::get('/', [ToPerdidoController::class, 'index'])->name('index');
 Route::post('/local', [ToPerdidoController::class, 'buscaLocal'])->name('local');
 Route::get('/local/{cidade?}', [ToPerdidoController::class, 'locais'])->name('locais');
-Route::get('/busca/{cidade}', [ToPerdidoController::class, 'buscaCidadesJson']);
+Route::get('/busca/{cidade}', [ToPerdidoController::class, 'buscaCidades']);
 Route::get('/detalhes/{local}', [ToPerdidoController::class, 'detalhes'])->name('detalhes');
 Route::get('/mapa', function(){
     return view('mapa');
