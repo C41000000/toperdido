@@ -118,9 +118,28 @@ class Locais extends Model
         WHERE l.nome LIKE '%{$local}%'
     ";
 
-    return DB::select($sql);
+        return DB::select($sql);
     }
 
+    public function buscaUltimoLocalCriado(){
+        $sql = "
+            SELECT
+            l.local_id,
+            l.nome,
+            r.rua_nome,
+            l.img
+            FROM locais l 
+            INNER JOIN rua r ON r.rua_id = l.rua_id
+            INNER JOIN bairro b ON b.bairro_id = r.bairro_id
+            INNER JOIN cidades c ON c.cidade_id = b.cidade_id
+            INNER JOIN estado e ON e.estado_id = c.estado_id
+            INNER JOIN pais p ON p.pais_id = e.pais_id
+            ORDER BY local_id DESC LIMIT 1
+        ";
+
+        return DB::select($sql);
+
+    }
     public function rua(){
         return $this->hasOne(Rua::class);
     }

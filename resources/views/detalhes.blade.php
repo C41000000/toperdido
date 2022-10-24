@@ -2,7 +2,7 @@
 
 @section('title', 'nome do local')
 @php 
-    // dd($dados);
+     
 @endphp
 @section('content')
 <style>

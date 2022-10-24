@@ -28,4 +28,16 @@ class Rua extends Model
         return DB::select($sql);
     }
 
+    public function buscaUltimaRuaCriada(){
+
+        $sql = "
+            SELECT 
+                *
+            FROM rua
+            ORDER BY rua_id DESC LIMIT 1
+        ";
+
+        return DB::select($sql);
+    }
+
 }

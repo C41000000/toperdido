@@ -28,4 +28,16 @@ class Bairro extends Model
         return $dados;
     }
 
+    public function buscaUltimoBairro(){
+
+        $sql = "
+            SELECT
+                *
+            FROM bairro
+            ORDER BY bairro_id DESC LIMIT 1
+        ";
+
+        return DB::select($sql);
+    }
+
 }

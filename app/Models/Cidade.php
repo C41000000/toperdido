@@ -52,5 +52,18 @@ class Cidade extends Model
         return DB::select($sql);
     }
 
+    public function buscaUltimaCidade(){
+
+        $sql = "
+            SELECT 
+                *
+            FROM cidades
+            ORDER BY cidade_id DESC LIMIT 1
+        ";
+
+        return DB::select($sql);
+
+    }
+
     
 }
