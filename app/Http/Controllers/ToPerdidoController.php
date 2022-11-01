@@ -21,10 +21,6 @@ class ToPerdidoController extends Controller
         return view('index');
     }
 
-    public function login(){
-        return view('to-perdido.login');
-    }
-
     public function buscaLocal(Request $request){
         $locais = new Locais();
         
