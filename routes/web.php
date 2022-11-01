@@ -22,6 +22,7 @@ Route::get('/local/{cidade?}', [ToPerdidoController::class, 'locais'])->name('lo
 Route::get('/busca/{cidade}', [ToPerdidoController::class, 'buscaCidades']);
 Route::get('/detalhes/{local}', [ToPerdidoController::class, 'detalhes'])->name('detalhes');
 Route::get('/informacoes/{local}', [ToPerdidoController::class, 'buscaLocaisAutocomplete'])->name('informacoes');
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/mapa', function(){
     return view('mapa');
 })->name('mapa');
