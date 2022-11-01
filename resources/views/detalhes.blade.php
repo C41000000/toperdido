@@ -176,15 +176,15 @@
     <div class="container">
         <div id="reviews" class="review-section">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                <h4 class="m-0">Avaliações</h4>
+                <h4 class="m-0">{$quantidadeReviews} Reviews</h4>
                 <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                    <option data-select2-id="3">Mais relevantes</option>
-                    <option>Most Recent</option>
+                    <option data-select2-id="3">Mais relevante</option>
+                    <option>Mais recente</option>
                 </select>
                 <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="2" style="width: 188px;">
                     <span class="selection">
                         <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-qd66-container">
-                            <span class="select2-selection__rendered" id="select2-qd66-container" role="textbox" aria-readonly="true" title="Most Relevant">Most Relevant</span>
+                            <span class="select2-selection__rendered" id="select2-qd66-container" role="textbox" aria-readonly="true" title="Most Relevant">Mais Relevante</span>
                             <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
                         </span>
                     </span>
@@ -198,7 +198,7 @@
                             <tr class="">
                                 <td>
                                     <span>
-                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">5 Stars</button>
+                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">5 Estrelas</button>
                                     </span>
                                 </td>
                                 <td class="progress-bar-container">
@@ -208,12 +208,12 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="star-num">(36)</td>
+                                <td class="star-num">{$quantidade5est}</td>
                             </tr>
                             <tr class="">
                                 <td>
                                     <span>
-                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">5 Stars</button>
+                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">4 Estrelas</button>
                                     </span>
                                 </td>
                                 <td class="progress-bar-container">
@@ -223,12 +223,12 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="star-num">(2)</td>
+                                <td class="star-num">{$quantidade4est}</td>
                             </tr>
                             <tr class="">
                                 <td>
                                     <span>
-                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">5 Stars</button>
+                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">3 Estrelas</button>
                                     </span>
                                 </td>
                                 <td class="progress-bar-container">
@@ -238,12 +238,12 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="star-num">(0)</td>
+                                <td class="star-num">{$quantidade3est}</td>
                             </tr>
                             <tr class="">
                                 <td>
                                     <span>
-                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">5 Stars</button>
+                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">2 Estrelas</button>
                                     </span>
                                 </td>
                                 <td class="progress-bar-container">
@@ -253,12 +253,12 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="star-num">(0)</td>
+                                <td class="star-num">{$quantidade2est}</td>
                             </tr>
                             <tr class="">
                                 <td>
                                     <span>
-                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">5 Stars</button>
+                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">1 Estrela </button>
                                     </span>
                                 </td>
                                 <td class="progress-bar-container">
@@ -268,23 +268,23 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="star-num">(0)</td>
+                                <td class="star-num">{$quantidade1est}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="col-md-6">
                     <div class="ranking">
-                        <h6 class="text-display-7">Rating Breakdown</h6>
+                        <h6 class="text-display-7">Ranking</h6>
                         <ul>
                             <li>
-                                Seller communication level<span>5<span class="review-star rate-10 show-one"></span></span>
+                                Nível de comunicação do vendedor<span>{$rankingComunicacao}<span class="review-star rate-10 show-one"></span></span>
                             </li>
                             <li>
-                                Recommend to a friend<span>5<span class="review-star rate-10 show-one"></span></span>
+                                Recomendo à amigos<span>{$rankingRecomendacao}<span class="review-star rate-10 show-one"></span></span>
                             </li>
                             <li>
-                                Service as described<span>4.9<span class="review-star rate-10 show-one"></span></span>
+                                Descrição do serviço<span>{$rankingServico}<span class="review-star rate-10 show-one"></span></span>
                             </li>
                         </ul>
                     </div>
@@ -335,7 +335,7 @@
                                             ></path>
                                         </svg>
                                     </span>
-                                    <span class="thumb-title">Helpful</span>
+                                    <span class="thumb-title">Gostei</span>
                                 </div>
                                 <div class="helpful-thumb text-body-2 ml-3">
                                     <span class="fit-icon thumbs-icon">
@@ -345,7 +345,7 @@
                                             ></path>
                                         </svg>
                                     </span>
-                                    <span class="thumb-title">Not Helpful</span>
+                                    <span class="thumb-title">Não Gostei</span>
                                 </div>
                             </div>
                             <div class="response-item mt-4 d-flex">
@@ -382,6 +382,57 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Adicionar Comentário
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Sua opnião é importante !!</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                                        <label for="floatingTextarea">Comentário</label>
+                                    </div>
+                                    
+                                    <div style="margin-top: 50px; margin-bottom: 10px;">
+                                            <h5>Quantas estrelas deseja dar?</h5>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+                                        <label class="form-check-label" for="inlineRadio5">5</label>
+                                      </div>
+                                      
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                <button type="button" class="btn btn-primary">Enviar</button>
+                                </div>
+                            </div>
+                            </div>
                     </div>
                 </li>
             </ul>
