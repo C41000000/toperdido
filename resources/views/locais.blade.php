@@ -77,7 +77,7 @@
                   <p class="card-text">{{$local->rua_nome}}, {{$local->numero}} - {{$local->bairro_nome}}</p>
 		              <div class="d-flex justify-content-between align-items-center">
 		                <div class="btn-group">
-		                  <a href='detalhes/{{$local->local_id}}' type="button" class="btn btn-sm btn-outline-secondary">Detalhes</a>
+		                  <a href='/detalhes/{{$local->local_id}}' type="button" class="btn btn-sm btn-outline-secondary">Detalhes</a>
 		                </div>
 		                <small class="text-muted">9 mins</small>
 		              </div>

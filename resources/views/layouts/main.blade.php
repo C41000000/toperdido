@@ -138,7 +138,7 @@
                 <div class="d-flex">
                   <form class='d-flex'  role="search">
                     @csrf
-                    <input name='cidade' id='cidNome' class="form-control me-2" type="text" placeholder="Procure uma cidade" aria-label="Search">
+                    <input name='cidade' id='cidNome' autocomplete="off" class="form-control me-2" type="text" placeholder="Procure uma cidade" aria-label="Search">
                     {{-- <button id='busca' class="btn btn-outline-success" type="submit">Buscar</button> --}}
                     <div multiple="multiple" id='autocomplete' style="display: none;" class='list-group'>
   
