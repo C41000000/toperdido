@@ -22,7 +22,13 @@ Route::get('/local/{cidade?}', [ToPerdidoController::class, 'locais'])->name('lo
 Route::get('/busca/{cidade}', [ToPerdidoController::class, 'buscaCidades']);
 Route::get('/detalhes/{local}', [ToPerdidoController::class, 'detalhes'])->name('detalhes');
 Route::get('/informacoes/{local}', [ToPerdidoController::class, 'buscaLocaisAutocomplete'])->name('informacoes');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+
+Route::get('/cadastro', function(){
+    return view('auth.register');
+})->name('cadastro');
+
+
 Route::get('/mapa', function(){
     return view('mapa');
 })->name('mapa');
@@ -32,3 +38,12 @@ Route::get('/mapa', function(){
  * 
  * 
 */
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('index');
+    })->name('dashboard');
+});

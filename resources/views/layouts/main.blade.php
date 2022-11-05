@@ -128,15 +128,32 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
+
+                  @guest
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('login')}}">Login</a>
-                  </li>                  
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('cadastro')}}">Cadastro</a>
+                  </li>  
+                  @endguest                                       
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('locais')}}">Locais</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('mapa')}}">Mapa</a>
                   </li>
+                  @auth
+                  <li class="nav-item">
+                    <form action="/logout" method='POST' class="">
+                      @csrf
+                      <a class="nav-link" href="/logout" onclick="event.preventDefault();
+                        this.closest('form').submit();">
+                        Sair
+                      </a>
+                    </form>
+                  </li>
+                  @endauth                  
                 </ul>
                 <div class="d-flex">
                   <form class='d-flex'  role="search">
