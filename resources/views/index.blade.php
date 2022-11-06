@@ -73,44 +73,17 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img src="/img/rafa.jpeg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
-
-          <h2 class="fw-normal">Rafa Moreira</h2>
-          <p>Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis!Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.Quem manda na minha terra sou euzis!</p>
-          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="/img/bill.jpg"class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
-
-          <h2 class="fw-normal">Bora Bill</h2>
-          <p>Viva Forevis aptent taciti sociosqu ad litora torquent.Copo furadis é disculpa de bebadis, arcu quam euismod magna.Aenean aliquam molestie leo, vitae iaculis nisl.Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
-          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="/img/matue.jpg"class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
-
-          <h2 class="fw-normal">Matuê</h2>
-          <p>Manduma pindureta quium dia nois paga.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.A ordem dos tratores não altera o pão duris.Sapien in monti palavris qui num significa nadis i pareci latim.</p>
-          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
       <!-- START THE FEATURETTES -->
 
       <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">Conhece o Elon Musk? <span class="text-muted">Ta fazendo foguete</span></h2>
+          <h2 class="featurette-heading fw-normal lh-1">Você conhece bem Caratinga? <span class="text-muted">Essa cidade sempre nos surpreende...</span></h2>
           <p class="lead">Em pleno 2022, ano do Elon Musk. Hoje o menino da nota vermelha venceu. Às vezes queria ser normal. Cheguei calado ergui meus pesos e fui embora. Tem uma coroa na minha maldade, se nada der certo, vou ativar o modo, prostshape. Projetinho fellas. Se você joga Minecraft, obrigatóriamente precisa estar no shape.</p>
         </div>
         <div class="col-md-5">
-          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="download.jpeg" ></img>
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="/img/prefeitura.jpg" ></img>
 
         </div>
       </div>
@@ -123,7 +96,7 @@
           <p class="lead">Em pleno 2022, ano do foguete. Se está desempregado e ainda não tem Shape, é uma desonra samurai. As gringas bugaram. Acredite nos seus sonhos. Projetinho fellas. Parabéns, mas se o shape não estiver em dia, nada vale o parabéns. Tá acordado e desempregado, obrigatóriamente, teoricamente, praticamente, necessariamente, deve estar no shape.</p>
         </div>
         <div class="col-md-5 order-md-1">
-          <img src="FcvdYzjXgAEpH8R.jpg_large" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+          <img src="/img/FcvdYzjXgAEpH8R.jpg_large" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
 
         </div>
       </div>
@@ -134,12 +107,45 @@
         <div class="col-md-7">
           <h2 class="featurette-heading fw-normal lh-1">O Shape fala por mim! <span class="text-muted">Conhece o Jack Chan?</span></h2>
           <p class="lead">Em pleno 2022, ano de eleição. Nem sei como seria o mundo sem eu estar sheipado. Botei o shape em jogo. Só queria voltar no tempo e jogar meu Super Nintendo. Nem sei como seria o mundo sem eu estar sheipado. Às vezes queria ser normal. Eu sou apenas um mero camponês.
-</p>
+          </p>
         </div>
         <div class="col-md-5">
-          <img src="FcjfAv7XkAEA8kr.jpg_large"class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+          <img src="/img/FcjfAv7XkAEA8kr.jpg_large"class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
         </div>
       </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="/img/caio.jpeg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+          <h2 class="fw-normal">Caio Amorim</h2>
+          <p>Caio Amorim é nascido em Caratinga MG. Ele é aluno da Rede Doctum de Ensino e está no curso de Ciêcia da Computação, onde cursa atualmente o 4° período. Foi responsável por todo o back-end desse projeto.</p>
+          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="/img/gustavo.jpeg"class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+          <h2 class="fw-normal">Gustavo Corrêa</h2>
+          <p>Gustavo Corrêa é nascido em Pocrane MG. Ele é aluno da Rede Doctum de Ensino e está no curso de Ciêcia da Computação, onde cursa atualmente o 4° período. Foi responsável pelo front-end desse projeto.</p>
+          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="/img/matue.jpg"class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+          <h2 class="fw-normal">Pedro Vieira</h2>
+          <p>Pedro Vieira é nascido em Caratinga MG. Ele é aluno da Rede Doctum de Ensino e está no curso de Ciêcia da Computação, onde cursa atualmente o 4° período. Foi responsável pelo front-end desse projeto.</p>
+          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="/img/juca.png"class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+          <h2 class="fw-normal">Jordismar Filho</h2>
+          <p>Jordismar Filho é nascido em Caratinga MG. Ele é aluno da Rede Doctum de Ensino e está no curso de Ciêcia da Computação, onde cursa atualmente o 4° período. Foi responsável pelo teste e marketing desse projeto.</p>
+          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
 
       <hr class="featurette-divider">
 
