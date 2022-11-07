@@ -442,6 +442,6 @@
     </div>
 </main>
 <form id='form-opiniao' action="{{route('adicionar-comentario')}}">
-<input type='hidden' name='id' value="">
+<input type='hidden' name='id' value="{{$dados->local_id}}">
 </form>
 @endsection

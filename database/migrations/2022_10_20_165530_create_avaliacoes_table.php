@@ -19,6 +19,8 @@ return new class extends Migration
             $table->float('nota');
             $table->foreignId('local_id');
             $table->foreign('local_id')->references('local_id')->on('locais');
+            $table->foreignId('usr');
+            $table->foreign('usr')->references('id')->on('users');
 
         });
     }

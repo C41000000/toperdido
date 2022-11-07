@@ -9,6 +9,7 @@ use App\Models\Rua;
 use App\Models\Bairro;
 use App\Models\Cidade;
 use App\Models\Estado;
+use App\Models\Avaliacoes;
 
 
 
@@ -164,9 +165,18 @@ class ToPerdidoController extends Controller
     }
 
     public function adicionarComentario(Request $request){
+        $model_avaliacoes = new Avaliacoes();
         $user =  Auth::id();;
         $dados = $request->all();
         
+        Avaliacoes::create([
+            'comentario' => $dados['texto'],
+            'nota' => $dados['nota'],
+            'usr' => $user,
+            'local_id' => $dados['id']
+        ]);
+
+        return redirect()->route('detalhes', $dados['id']);
         
     }
 

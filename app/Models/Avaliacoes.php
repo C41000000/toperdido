@@ -10,7 +10,7 @@ class Avaliacoes extends Model
     use HasFactory;
 
     protected $table = "avaliacoes";
-    protected $fillable = ['avaliacao_id', 'comentario', 'local_id', 'nota'];
+    protected $fillable = ['avaliacao_id', 'comentario', 'local_id', 'nota', 'usr'];
     public $timestamps = false;
     protected $primaryKey = "avaliacao_id";
 }
