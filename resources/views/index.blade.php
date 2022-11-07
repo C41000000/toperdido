@@ -10,8 +10,8 @@
   </style>
 <link rel="stylesheet" href="/css/index.css">
 <script src='/js/index.js'></script>
-  
-  
+
+
   <main>
 
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -22,35 +22,35 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="/img/mucum.jpg"class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
+          <img src="/img/caratingaimg.jpeg" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
 
           <div class="container">
             <div class="carousel-caption text-start">
-              <h1>Muçum Ipsum</h1>
-              <p>Mussum Ipsum, cacilds vidis litro abertis. Diuretics paradis num copo é motivis de denguis!</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Se inscreva agora e deixe sua avaliação.</a></p>
+              <h1>Caratinga, a sua cidade!</h1>
+              <p>Conheça os pontos turisticos e veja as suas avaliações.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Veja mais</a></p>
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="/img/cana.jpg"class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
+          <img src="/img/contribuir.jpeg" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
 
           <div class="container">
             <div class="carousel-caption">
-              <h1>Caldo de Cana.</h1>
-              <p>Suco de cevadiss deixa as pessoas mais interessantis.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Veja mais.</a></p>
+              <h1>Cadastre-se</h1>
+              <p>Se cadastrando no Tó Perdido é possivel registrar a sua opnião deixando comentarios e avaliações dos pontos turisticos.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Veja mais</a></p>
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="/img/Faria-Musk-Bolsonaro-20mai2022.jpg" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
+          <img src="/img/mapaImg.jpg" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
 
           <div class="container">
             <div class="carousel-caption text-end">
-              <h1>Conhece o Elon Musk?</h1>
-              <p>Ele está fazendo um foguete e fazendo um celular pra competir com o Apple.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Veja as novidades.</a></p>
+              <h1>Ocorrências</h1>
+              <p>Registre ocorrência que aconteceram perto de você para auxiliar outros moradores da sua comunidade.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Registrar Ocorrência</a></p>
             </div>
           </div>
         </div>
@@ -66,8 +66,8 @@
     </div>
 
 
-  
-  
+
+
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -79,12 +79,12 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">Você conhece bem Caratinga? <span class="text-muted">Essa cidade sempre nos surpreende...</span></h2>
-          <p class="lead">Em pleno 2022, ano do Elon Musk. Hoje o menino da nota vermelha venceu. Às vezes queria ser normal. Cheguei calado ergui meus pesos e fui embora. Tem uma coroa na minha maldade, se nada der certo, vou ativar o modo, prostshape. Projetinho fellas. Se você joga Minecraft, obrigatóriamente precisa estar no shape.</p>
+          <h2 class="featurette-heading fw-normal lh-1">Você conhece a sua cidade ? <span class="text-muted">Pontos turistícos de Caratinga.</span></h2>
+          <p class="lead">Esta viajando ou visitando uma nova cidade? A nossa aplicação tem o objtivo de ajudar-lhe a conhecer e saber o que fazer durante o seu momento de visita, navegue e conheça mais sobre a cidade em que esta no momento.</p>
+          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
         </div>
         <div class="col-md-5">
-          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="/img/prefeitura.jpg" ></img>
-
+          <img style="border-radius: 10px" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="/img/pedra.jpg" ></img>
         </div>
       </div>
 
@@ -92,11 +92,11 @@
 
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">Eu sou um mero camponês! <span class="text-muted">Sempre sheipado</span></h2>
-          <p class="lead">Em pleno 2022, ano do foguete. Se está desempregado e ainda não tem Shape, é uma desonra samurai. As gringas bugaram. Acredite nos seus sonhos. Projetinho fellas. Parabéns, mas se o shape não estiver em dia, nada vale o parabéns. Tá acordado e desempregado, obrigatóriamente, teoricamente, praticamente, necessariamente, deve estar no shape.</p>
+          <h2 class="featurette-heading fw-normal lh-1">Segurança! <span class="text-muted">Como saber se aquele bairro é seguro.</span></h2>
+          <p class="lead">Em pleno 2022 quem não se preocupa com a sua propria segurança, aqui no "Tó Perdido!" nós preocupamos com os nossos usuarios, disponibilizando um resumo de ocorrencias da sua cidade, informando o nivel de criminalidade do seu bairro, possibilitando que os proprios usuarios cadastrados cadastrem as suas ocorrencias.</p>
         </div>
         <div class="col-md-5 order-md-1">
-          <img src="/img/FcvdYzjXgAEpH8R.jpg_large" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+          <img style="border-radius: 10px" src="/img/seguranca.jpeg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
 
         </div>
       </div>
@@ -105,12 +105,12 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">O Shape fala por mim! <span class="text-muted">Conhece o Jack Chan?</span></h2>
-          <p class="lead">Em pleno 2022, ano de eleição. Nem sei como seria o mundo sem eu estar sheipado. Botei o shape em jogo. Só queria voltar no tempo e jogar meu Super Nintendo. Nem sei como seria o mundo sem eu estar sheipado. Às vezes queria ser normal. Eu sou apenas um mero camponês.
-          </p>
+          <h2 class="featurette-heading fw-normal lh-1">Registrar Ocorrência! <span class="text-muted">Ajude a sua comunidade.</span></h2>
+          <p class="lead">Contribuir com a nossa aplicação é o mesmo que contribuir com o sua comunidade, seu bairro, seu vizinho. No "Tó Perdido" faz as suas proprias ocorrencias e ajuda muitas pessoas!</p>
+            <p><a class="btn btn-secondary" href="#">Registrar Ocorrência &raquo;</a></p>
         </div>
         <div class="col-md-5">
-          <img src="/img/FcjfAv7XkAEA8kr.jpg_large"class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+          <img style="border-radius: 10px" src="/img/comunidade.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
         </div>
       </div>
 
@@ -241,6 +241,6 @@
       }
     }
   </script>
-  
-  
+
+
 @endsection
