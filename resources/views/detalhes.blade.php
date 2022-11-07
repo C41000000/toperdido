@@ -2,7 +2,7 @@
 
 @section('title', 'nome do local')
 @php 
-    //  dd($avaliacoes);
+    
 @endphp
 @section('content')
 <script src='/js/detalhes.js'></script>
@@ -177,118 +177,38 @@
     <div class="container">
         <div id="reviews" class="review-section">
             <div class="d-flex align-items-center justify-content-between mb-4">
-                <h4 class="m-0">{$quantidadeReviews} Reviews</h4>
-                <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                    <option data-select2-id="3">Mais relevante</option>
-                    <option>Mais recente</option>
-                </select>
-                <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="2" style="width: 188px;">
-                    <span class="selection">
-                        <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-qd66-container">
-                            <span class="select2-selection__rendered" id="select2-qd66-container" role="textbox" aria-readonly="true" title="Most Relevant">Mais Relevante</span>
-                            <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                        </span>
-                    </span>
-                    <span class="dropdown-wrapper" aria-hidden="true"></span>
-                </span>
+                <h4 class="m-0">{{$numero_total}} Avaliações</h4>
+
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <table class="stars-counters">
                         <tbody>
+                            @foreach($todas_notas as $key=> $cada_nota)
                             <tr class="">
                                 <td>
                                     <span>
-                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">5 Estrelas</button>
+                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">{{$key}} Estrelas</button>
                                     </span>
                                 </td>
                                 <td class="progress-bar-container">
                                     <div class="fit-progressbar fit-progressbar-bar star-progress-bar">
                                         <div class="fit-progressbar-background">
-                                            <span class="progress-fill" style="width: 97.2973%;"></span>
+                                            @php
+                                            $porcentagem = ($cada_nota != 0 && $numero_total != 0) ? ($cada_nota * 100) / $numero_total : 0;
+                                            @endphp
+                                            <span class="progress-fill" style="width: {{$porcentagem}}%;"></span>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="star-num">{$quantidade5est}</td>
+                                <td class="star-num">{{$cada_nota}}</td>
                             </tr>
-                            <tr class="">
-                                <td>
-                                    <span>
-                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">4 Estrelas</button>
-                                    </span>
-                                </td>
-                                <td class="progress-bar-container">
-                                    <div class="fit-progressbar fit-progressbar-bar star-progress-bar">
-                                        <div class="fit-progressbar-background">
-                                            <span class="progress-fill" style="width: 2.2973%;"></span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="star-num">{$quantidade4est}</td>
-                            </tr>
-                            <tr class="">
-                                <td>
-                                    <span>
-                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">3 Estrelas</button>
-                                    </span>
-                                </td>
-                                <td class="progress-bar-container">
-                                    <div class="fit-progressbar fit-progressbar-bar star-progress-bar">
-                                        <div class="fit-progressbar-background">
-                                            <span class="progress-fill" style="width: 0;"></span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="star-num">{$quantidade3est}</td>
-                            </tr>
-                            <tr class="">
-                                <td>
-                                    <span>
-                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">2 Estrelas</button>
-                                    </span>
-                                </td>
-                                <td class="progress-bar-container">
-                                    <div class="fit-progressbar fit-progressbar-bar star-progress-bar">
-                                        <div class="fit-progressbar-background">
-                                            <span class="progress-fill" style="width: 0;"></span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="star-num">{$quantidade2est}</td>
-                            </tr>
-                            <tr class="">
-                                <td>
-                                    <span>
-                                        <button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">1 Estrela </button>
-                                    </span>
-                                </td>
-                                <td class="progress-bar-container">
-                                    <div class="fit-progressbar fit-progressbar-bar star-progress-bar">
-                                        <div class="fit-progressbar-background">
-                                            <span class="progress-fill" style="width: 0;"></span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="star-num">{$quantidade1est}</td>
-                            </tr>
+
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
                 <div class="col-md-6">
-                    <div class="ranking">
-                        <h6 class="text-display-7">Ranking</h6>
-                        <ul>
-                            <li>
-                                Nível de comunicação do vendedor<span>{$rankingComunicacao}<span class="review-star rate-10 show-one"></span></span>
-                            </li>
-                            <li>
-                                Recomendo à amigos<span>{$rankingRecomendacao}<span class="review-star rate-10 show-one"></span></span>
-                            </li>
-                            <li>
-                                Descrição do serviço<span>{$rankingServico}<span class="review-star rate-10 show-one"></span></span>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
@@ -411,32 +331,36 @@
                                 <div class="modal-body">
                                     <div class="form-floating">
                                         <textarea name='opiniao' class="form-control" placeholder="Digite sua opinição" id="floatingTextarea"></textarea>
-                                        <label for="floatingTextarea">Comentário</label>
+                                        {{-- <label for="floatingTextarea"></label> --}}
                                     </div>
                                     
                                     <div style="margin-top: 50px; margin-bottom: 10px;">
                                             <h5>Avalie o local!</h5>
                                     </div>
                                     <div class="form-check form-check-inline">
+                                        <input checked class="form-check-input" type="radio" name="nota" id="inlineRadio0" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
+                                    </div>                                    
+                                    <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="nota" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
+                                    </div>
+                                    <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="nota" id="inlineRadio2" value="2">
                                         <label class="form-check-label" for="inlineRadio2">2</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
+                                    </div>
+                                    <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="nota" id="inlineRadio3" value="3">
                                         <label class="form-check-label" for="inlineRadio3">3</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
+                                    </div>
+                                    <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="nota" id="inlineRadio4" value="4">
                                         <label class="form-check-label" for="inlineRadio4">4</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
+                                    </div>
+                                    <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="nota" id="inlineRadio5" value="5">
                                         <label class="form-check-label" for="inlineRadio5">5</label>
-                                      </div>
+                                    </div>
                                       
                                 </div>
                                 <div class="modal-footer">

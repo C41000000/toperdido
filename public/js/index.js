@@ -74,4 +74,10 @@ $(function(){
 
 $(document).ready(function(){
     $('#cidNome').val('');
+    var largura = window.screen.width;
+
+    if(largura > 768){
+        $('#coisa').removeClass('collapse');
+    }
+
 });

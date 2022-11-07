@@ -26,4 +26,6 @@ class Avaliacoes extends Model
 
         return DB::select($sql);
     }
+
+
 }

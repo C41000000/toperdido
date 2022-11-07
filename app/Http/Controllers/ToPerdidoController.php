@@ -153,10 +153,32 @@ class ToPerdidoController extends Controller
         
         $dados = $model_local->bucasDadosLocal($local);
         $todas_avaliacoes = $model_avaliacoes->buscaTodasAvaliacoesLocal($local);
+        $media = 0;
+        $soma = 0;
+        $todas_notas = [0,0,0,0,0,0];
+        
+        foreach($todas_avaliacoes as $cada_avaliacao){
+            $soma += $cada_avaliacao->nota;
+            $todas_notas[$cada_avaliacao->nota]+=1;
+        }
+
+        krsort($todas_notas);
+        
+        
+        
+        
+        
+        $numero_total = count($todas_avaliacoes);
+        
+        $media = ($soma !=0 && $numero_total) ?  ($soma / $numero_total) : 0;
+
         
         return view('detalhes',[
             'dados' => array_shift($dados),
-            'avaliacoes' => $todas_avaliacoes
+            'avaliacoes' => $todas_avaliacoes,
+            'numero_total' => $numero_total,
+            'todas_notas' => $todas_notas,
+            'media' => $media
         ]);
     }
 
@@ -171,7 +193,7 @@ class ToPerdidoController extends Controller
         $model_avaliacoes = new Avaliacoes();
         $user =  Auth::id();;
         $dados = $request->all();
-        
+       
         Avaliacoes::create([
             'comentario' => $dados['texto'],
             'nota' => $dados['nota'],
