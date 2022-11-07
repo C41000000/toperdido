@@ -29,10 +29,18 @@ class ToPerdidoController extends Controller
         if(!$local){
             $local = $this->criaCoisas($request->all());   
         }
+        $todas_notas = [0,0,0,0,0,0];
+
+        foreach($todas_notas as $key => $cada_nota){
+            $todas_notas[$key] = 0;
+        }
         
         return view('detalhes', [
             'dados' => array_shift($local),
-            'avaliacoes' => false
+            'avaliacoes' => false,
+            'numero_total' => 0,
+            'todas_notas' => $todas_notas,
+            'media' => 0
         ]);
     }
 
