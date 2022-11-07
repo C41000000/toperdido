@@ -86,6 +86,7 @@ class Locais extends Model
     public function bucasDadosLocal($local){
         $sql = "
             SELECT
+                l.local_id,
                 l.nome,
                 l.numero,
                 l.img,

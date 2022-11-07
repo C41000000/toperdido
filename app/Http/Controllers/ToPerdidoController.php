@@ -148,6 +148,7 @@ class ToPerdidoController extends Controller
     public function detalhes($local){
         $model_local = new locais();
         
+        
         $dados = $model_local->bucasDadosLocal($local);
         
         return view('detalhes',[
@@ -160,6 +161,13 @@ class ToPerdidoController extends Controller
 
         return $locais_model->buscaLocalPeloNome($local);
 
+    }
+
+    public function adicionarComentario(Request $request){
+        $user =  Auth::id();;
+        $dados = $request->all();
+        
+        
     }
 
     public function pr($string, $die = 1){

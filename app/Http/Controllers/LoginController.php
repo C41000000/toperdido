@@ -10,7 +10,7 @@ class LoginController extends Controller
     public function index(Request $request){
 
         if($request->all()){
-            die;
+            
         }
         return view("login");
     }

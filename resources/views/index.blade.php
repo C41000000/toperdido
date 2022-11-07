@@ -39,7 +39,7 @@
             <div class="carousel-caption">
               <h1>Cadastre-se</h1>
               <p>Se cadastrando no Tó Perdido é possivel registrar a sua opnião deixando comentarios e avaliações dos pontos turisticos.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Veja mais</a></p>
+              <p><a class="btn btn-lg btn-primary" href="{{route('cadastro')}}">Veja mais</a></p>
             </div>
           </div>
         </div>
