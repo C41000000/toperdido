@@ -444,4 +444,4 @@
 <form id='form-opiniao' action="{{route('adicionar-comentario')}}">
 <input type='hidden' name='id' value="">
 </form>
-  @endsection;
+@endsection
