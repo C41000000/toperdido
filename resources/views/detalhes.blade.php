@@ -2,7 +2,7 @@
 
 @section('title', 'nome do local')
 @php 
-     
+    //  dd($avaliacoes);
 @endphp
 @section('content')
 <script src='/js/detalhes.js'></script>
@@ -296,13 +296,23 @@
         <div class="review-list">
             <ul>
                 <li>
-                    <div class="d-flex">
-                        <div class="left">
-                            <span>
-                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="profile-pict-img img-fluid" alt="" />
-                            </span>
-                        </div>
-                        <div class="right">
+                    <div class="flex ">
+                        @if($avaliacoes)
+                            @foreach($avaliacoes as $cada_avaliacao)
+                            <div class="left">
+                                <span>
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="profile-pict-img img-fluid" alt="" />
+                                </span>
+                            </div>
+                                <div class='right'>
+                                    <h4>{{$cada_avaliacao->name}}</h4>
+                                    <div class='review-description'>
+                                        {{$cada_avaliacao->comentario}}
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                        {{-- <div class="right">
                             <h4>
                                 Askbootstrap
                                 <span class="gig-rating text-body-2">
@@ -382,7 +392,7 @@
                                     <span class="publish py-3 d-inline-block w-100">Published 4 weeks ago</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                         <!-- se o usuario estiver logado podera deixar comentarios sobre o local -->
                         @auth

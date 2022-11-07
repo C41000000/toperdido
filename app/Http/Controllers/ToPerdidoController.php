@@ -148,12 +148,14 @@ class ToPerdidoController extends Controller
 
     public function detalhes($local){
         $model_local = new locais();
-        
+        $model_avaliacoes = new Avaliacoes();
         
         $dados = $model_local->bucasDadosLocal($local);
+        $todas_avaliacoes = $model_avaliacoes->buscaTodasAvaliacoesLocal($local);
         
         return view('detalhes',[
-            'dados' => array_shift($dados)
+            'dados' => array_shift($dados),
+            'avaliacoes' => $todas_avaliacoes
         ]);
     }
 
