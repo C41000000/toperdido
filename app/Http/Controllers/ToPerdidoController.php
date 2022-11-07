@@ -31,7 +31,8 @@ class ToPerdidoController extends Controller
         }
         
         return view('detalhes', [
-            'dados' => array_shift($local)
+            'dados' => array_shift($local),
+            'avaliacoes' => false
         ]);
     }
 
@@ -155,7 +156,7 @@ class ToPerdidoController extends Controller
         
         return view('detalhes',[
             'dados' => array_shift($dados),
-            'avaliacoes' => $todas_avaliacoes
+            'avaliacoes' => $todas_avaliacoes ? $todas_avaliacoes : 'false'
         ]);
     }
 

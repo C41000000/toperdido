@@ -34,7 +34,7 @@ $(function(){
                         $('[name=endereco' + i + ']').val($(this).text());
                         i++;
                     }
-                    console.log('[name=endereco' + i + ']');
+                    
                     
                 })
                
