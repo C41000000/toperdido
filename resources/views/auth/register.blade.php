@@ -1,9 +1,10 @@
 @extends('layouts.main')
 @section("content")
+<title>Tô Perdido!</title>
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+        <img src="/img/logo1.png" width="400" height="200">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
