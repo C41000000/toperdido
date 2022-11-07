@@ -117,9 +117,11 @@
     <body>
         <div class='container-fluid'>
          <header>
-          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="/">Tô Perdido!</a>
+              <a href="./">
+                <img class="navbar-brand" src="/img/so_logo1.png" width="100" height="100">
+              </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
