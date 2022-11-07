@@ -73,33 +73,6 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img src="/img/rafa.jpeg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
-
-          <h2 class="fw-normal">Rafa Moreira</h2>
-          <p>Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis!Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.Quem manda na minha terra sou euzis!</p>
-          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="/img/bill.jpg"class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
-
-          <h2 class="fw-normal">Bora Bill</h2>
-          <p>Viva Forevis aptent taciti sociosqu ad litora torquent.Copo furadis é disculpa de bebadis, arcu quam euismod magna.Aenean aliquam molestie leo, vitae iaculis nisl.Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
-          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img src="/img/matue.jpg"class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
-
-          <h2 class="fw-normal">Matuê</h2>
-          <p>Manduma pindureta quium dia nois paga.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.A ordem dos tratores não altera o pão duris.Sapien in monti palavris qui num significa nadis i pareci latim.</p>
-          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
       <!-- START THE FEATURETTES -->
 
       <hr class="featurette-divider">
@@ -140,6 +113,39 @@
           <img style="border-radius: 10px" src="/img/comunidade.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
         </div>
       </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="/img/caio.jpeg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+          <h2 class="fw-normal">Caio Amorim</h2>
+          <p>Caio Amorim é nascido em Caratinga MG. Ele é aluno da Rede Doctum de Ensino e está no curso de Ciêcia da Computação, onde cursa atualmente o 4° período. Foi responsável por todo o back-end desse projeto.</p>
+          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="/img/gustavo.jpeg"class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+          <h2 class="fw-normal">Gustavo Corrêa</h2>
+          <p>Gustavo Corrêa é nascido em Pocrane MG. Ele é aluno da Rede Doctum de Ensino e está no curso de Ciêcia da Computação, onde cursa atualmente o 4° período. Foi responsável pelo front-end desse projeto.</p>
+          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="/img/matue.jpg"class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+          <h2 class="fw-normal">Pedro Vieira</h2>
+          <p>Pedro Vieira é nascido em Caratinga MG. Ele é aluno da Rede Doctum de Ensino e está no curso de Ciêcia da Computação, onde cursa atualmente o 4° período. Foi responsável pelo front-end desse projeto.</p>
+          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="/img/juca.png"class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+          <h2 class="fw-normal">Jordismar Filho</h2>
+          <p>Jordismar Filho é nascido em Caratinga MG. Ele é aluno da Rede Doctum de Ensino e está no curso de Ciêcia da Computação, onde cursa atualmente o 4° período. Foi responsável pelo teste e marketing desse projeto.</p>
+          <p><a class="btn btn-secondary" href="#">Ver Mais &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
 
       <hr class="featurette-divider">
 
