@@ -21,9 +21,7 @@
         display: inline-block;
     }
     .review-list ul li .left {
-        flex: none;
-        max-width: none;
-        margin: 0 10px 0 0;
+        display: flex;
     }
     .review-list ul li .left span img {
         border-radius: 50%;
@@ -66,6 +64,7 @@
     }
     .review-list ul li .review-description {
         margin: 20px 0 0;
+        margin-bottom: 50px;
     }
     .review-list ul li .review-description p {
         font-size: 14px;
@@ -160,6 +159,17 @@
         align-items: center;
         font-weight: 700;
     }
+    .espaco{
+        display: flex;
+    }
+    .margem1{
+        margin-left: 10px;
+    }
+    .bordaComentario{
+        border: 1px solid rgba(128, 128, 128, 0.466);
+        margin-bottom: 10px;
+        padding: 10px;
+    }
 </style>
 <main>
     <section class="py-5 text-center container">
@@ -217,21 +227,28 @@
             <ul>
                 <li>
                     <div class="flex ">
-                        @if($avaliacoes)
-                            @foreach($avaliacoes as $cada_avaliacao)
-                            <div class="left">
-                                <span>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="profile-pict-img img-fluid" alt="" />
-                                </span>
-                            </div>
-                                <div class='right'>
-                                    <h4>{{$cada_avaliacao->name}}</h4>
-                                    <div class='review-description'>
-                                        {{$cada_avaliacao->comentario}}
+                        <div class="bordaComentario">
+                            @if($avaliacoes)
+                                @foreach($avaliacoes as $cada_avaliacao)
+                                    <div class="left">
+                                        <span>
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="profile-pict-img img-fluid" alt="" />
+                                        </span>
+                                        <h4 class="margem1">{{$cada_avaliacao->name}}</h4>
                                     </div>
-                                </div>
-                            @endforeach
-                        @endif
+
+                                    <div class='right'>
+                                        <hr>
+                                        <div class='review-description'>
+                                            {{$cada_avaliacao->comentario}}
+                                        </div>
+                                    </div>
+
+                                    <hr class="featurette-divider">
+                                @endforeach
+                            @endif
+                        </div>
+                        
                         {{-- <div class="right">
                             <h4>
                                 Askbootstrap
