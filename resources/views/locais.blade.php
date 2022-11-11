@@ -37,9 +37,9 @@
     <section class="py-5 text-center container">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">Locais mais famosos de {{$cidade->cidade_nome}}</h1>
+          <h1 class="fw-light"><strong>Locais mais famosos de {{$cidade->cidade_nome}}</strong></h1>
           @if($locais)
-            <h3>Aqui você irá encontrar o locais mais bem avaliados de {{$cidade->cidade_nome}}, onde poderá ver de cara quem chegou na cidade e já amou!</h3>
+            <h5>Aqui você irá encontrar o locais mais bem avaliados de {{$cidade->cidade_nome}}, onde poderá ver de cara quem chegou na cidade e já amou!</h5>
           @endif
 
           @if(!$locais)
@@ -77,7 +77,7 @@
                   <p class="card-text">{{$local->rua_nome}}, {{$local->numero}} - {{$local->bairro_nome}}</p>
 		              <div class="d-flex justify-content-between align-items-center">
 		                <div class="btn-group">
-		                  <a href='/detalhes/{{$local->local_id}}' type="button" class="btn btn-sm btn-outline-secondary">Detalhes</a>
+		                  <a href='/detalhes/{{$local->local_id}}' type="button" class="btn btn-sm btn btn-outline-primary">Detalhes</a>
 		                </div>
 		                <small class="text-muted">9 mins</small>
 		              </div>
