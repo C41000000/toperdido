@@ -53,7 +53,7 @@
             <div class="carousel-caption text-end">
               <h1>Sua cidade</h1>
               <p>Entre no mapa de sua cidade e procure pelo local específico que você deseja saber o feedback</p>
-              <p><a class="btn btn-lg btn-primary" href="{{route('mapa')}}">Registrar Ocorrência</a></p>
+              <p><a class="btn btn-lg btn-primary" href="{{route('mapa')}}">Vá até ao mapa</a></p>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@
         <div class="col-md-7">
           <h2 class="featurette-heading fw-normal lh-1">Você conhece a sua cidade ? <span class="text-muted">Pontos turistícos de Caratinga.</span></h2>
           <p class="lead">Esta viajando ou visitando uma nova cidade? A nossa aplicação tem o objtivo de ajudar-lhe a conhecer e saber o que fazer durante o seu momento de visita, navegue e conheça mais sobre a cidade em que esta no momento.</p>
-          <p><a class="btn btn-outline-primary" href="#">Ver Mais &raquo;</a></p>
+          {{-- <p><a class="btn btn-outline-primary" href="#">Ver Mais &raquo;</a></p> --}}
         </div>
         <div class="col-md-5">
           <img style="border-radius: 10px" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false" src="/img/pedra.jpg" ></img>
@@ -110,7 +110,7 @@
         <div class="col-md-7">
           <h2 class="featurette-heading fw-normal lh-1">Registrar Ocorrência! <span class="text-muted">Ajude a sua comunidade.</span></h2>
           <p class="lead">Contribuir com a nossa aplicação é o mesmo que contribuir com o sua comunidade, seu bairro, seu vizinho. No "Tó Perdido" faz as suas proprias ocorrencias e ajuda muitas pessoas!</p>
-            <p><a class="btn btn-outline-primary" href="#">Registrar Ocorrência &raquo;</a></p>
+            {{-- <p><a class="btn btn-outline-primary" href="#">Registrar Ocorrência &raquo;</a></p> --}}
         </div>
         <div class="col-md-5">
           <img style="border-radius: 10px" src="/img/comunidade.png" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
@@ -125,7 +125,7 @@
 
           <h2 class="fw-normal">Caio Amorim</h2>
           <p>Caio Amorim é nascido em Caratinga MG. Ele é aluno da Rede Doctum de Ensino e está no curso de Ciêcia da Computação, onde cursa atualmente o 4° período. Foi responsável por todo o back-end desse projeto.</p>
-          <p><a class="btn btn-outline-primary" href="#">Ver Mais &raquo;</a></p>
+          {{-- <p><a class="btn btn-outline-primary" href="#">Ver Mais &raquo;</a></p> --}}
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img src="/img/gustavo.jpeg"class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
