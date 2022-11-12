@@ -10,6 +10,7 @@ use App\Models\Bairro;
 use App\Models\Cidade;
 use App\Models\Estado;
 use App\Models\Avaliacoes;
+use App\Models\Resposta;
 
 
 
@@ -158,6 +159,7 @@ class ToPerdidoController extends Controller
     public function detalhes($local){
         $model_local = new locais();
         $model_avaliacoes = new Avaliacoes();
+        $model_resposta = new Resposta();
         
         $dados = $model_local->bucasDadosLocal($local);
         $todas_avaliacoes = $model_avaliacoes->buscaTodasAvaliacoesLocal($local);
@@ -165,9 +167,10 @@ class ToPerdidoController extends Controller
         $soma = 0;
         $todas_notas = [0,0,0,0,0,0];
         
-        foreach($todas_avaliacoes as $cada_avaliacao){
+        foreach($todas_avaliacoes as $key => $cada_avaliacao){
             $soma += $cada_avaliacao->nota;
             $todas_notas[$cada_avaliacao->nota]+=1;
+            $todas_avaliacoes[$key]->respostas = $model_resposta->buscaTodasRepostas($cada_avaliacao->avaliacao_id);
         }
 
         krsort($todas_notas);
@@ -201,16 +204,33 @@ class ToPerdidoController extends Controller
         $model_avaliacoes = new Avaliacoes();
         $user =  Auth::id();;
         $dados = $request->all();
-       
+        
         Avaliacoes::create([
             'comentario' => $dados['texto'],
             'nota' => $dados['nota'],
+            'nota_bairro' => $dados['nota_bairro'],
             'usr' => $user,
             'local_id' => $dados['id']
         ]);
 
+        
         return redirect()->route('detalhes', $dados['id']);
         
+    }
+
+    public function adicionarResposta(Request $request){
+        $model_resposta = new Resposta();
+        $user = Auth::id();
+        $dados = $request->all();
+        
+        
+        Resposta::create([
+            'usr' => $user,
+            'avaliacao_id' => $dados['avaliacao_id'],
+            'comentario' => $dados['comentario']
+        ]);
+
+        return redirect()->route('detalhes', $dados['id']);
     }
 
     public function pr($string, $die = 1){

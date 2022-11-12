@@ -11,14 +11,15 @@ class Avaliacoes extends Model
     use HasFactory;
 
     protected $table = "avaliacoes";
-    protected $fillable = ['avaliacao_id', 'comentario', 'local_id', 'nota', 'usr'];
+    protected $fillable = ['avaliacao_id', 'comentario', 'local_id', 'nota', 'usr', 'nota_bairro'];
     public $timestamps = false;
     protected $primaryKey = "avaliacao_id";
 
     public function buscaTodasAvaliacoesLocal($local){
         $sql = "
             SELECT
-                *
+                a.*,
+                u.name
             FROM avaliacoes a
             INNER JOIN users u ON u.id = a.usr
             WHERE a.local_id = {$local}

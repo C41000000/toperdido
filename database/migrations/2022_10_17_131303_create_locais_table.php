@@ -16,7 +16,8 @@ return new class extends Migration
     {
         Schema::create('locais', function (Blueprint $table) {
             $table->id('local_id');
-            $table->foreignIdFor(Rua::class)->references('rua_id')->on('rua');
+            $table->foreignId('rua_id');
+            $table->foreign('rua_id')->references('rua_id')->on('rua');
             $table->string("nome");
         });
     }

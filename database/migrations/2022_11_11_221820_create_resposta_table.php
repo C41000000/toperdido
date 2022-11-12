@@ -13,16 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('avaliacoes', function (Blueprint $table) {
-            $table->id('avaliacao_id');
+        Schema::create('resposta', function (Blueprint $table) {
+            $table->id();
             $table->string('comentario');
-            $table->float('nota');
-            $table->float('nota_bairro');
-            $table->foreignId('local_id');
-            $table->foreign('local_id')->references('local_id')->on('locais');
             $table->foreignId('usr');
             $table->foreign('usr')->references('id')->on('users');
-
+            $table->foreignId('avaliacao_id');
+            $table->foreign('avaliacao_id')->references('avaliacao_id')->on('avaliacoes');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('avaliacoes');
+        Schema::dropIfExists('resposta');
     }
 };
