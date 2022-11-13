@@ -6,6 +6,23 @@
 @endphp
 @section('content')
 <script src='/js/detalhes.js'></script>
+<script src="https://partner.googleadservices.com/gampad/cookie.js?domain=bestjquery.com&callback=_gfp_s_&client=ca-pub-3311815518700050&cookie=ID%3D2f6f4dc27b67d162-22ab4a3f31d800a0%3AT%3D1668290470%3ART%3D1668290470%3AS%3DALNI_MYy0ekNlIFXEIwPpL4v5jd75j1VVA&gpic=UID%3D000009d825d86623%3AT%3D1668290470%3ART%3D1668290470%3AS%3DALNI_MYrvDgDOFy6P8OmyCANZD4fdnj14w&gpid_exp=1"></script>
+<script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202211090101/show_ads_impl.js?bust=31070831" id="google_shimpl"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+ 
+$(document).ready(function(){
+    $('.progress-value > span').each(function(){
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        },{
+            duration: 3500,
+            easing: 'swing',
+            step: function (now){
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+});
 <style>
     body{
         margin-top:20px;
@@ -181,6 +198,227 @@
         margin-left: 40%;
         margin-top: 30px;
     }
+    .progress{
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
+        background: none;
+        margin: 0 auto;
+        box-shadow: none;
+        position: relative;
+        overflow: visible;
+    }
+    .progress:after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 5px solid #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .progress > span{
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+    .progress .progress-left{ left: 0; }
+    .progress .progress-bar{
+        width: 100%;
+        height: 100%;
+        background: none;
+        border-width: 5px;
+        border-style: solid;
+        position: absolute;
+        top: 0;
+    }
+    .progress .progress-left .progress-bar{
+        left: 100%;
+        border-top-right-radius: 80px;
+        border-bottom-right-radius: 80px;
+        border-left: 0;
+        -webkit-transform-origin: center left;
+        transform-origin: center left;
+    }
+    .progress .progress-right{ right: 0; }
+    .progress .progress-right .progress-bar{
+        left: -100%;
+        border-top-left-radius: 80px;
+        border-bottom-left-radius: 80px;
+        border-right: 0;
+        -webkit-transform-origin: center right;
+        transform-origin: center right;
+        animation: loading-1 1.8s linear forwards;
+    }
+    .progress .inner-circle,
+    .progress .progress-value{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 5px solid #8e8e8e;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 50px;
+        text-align: center;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+    .progress .inner-circle:after{
+        content: "";
+        width: 5px;
+        height: 60px;
+        background: #8e8e8e;
+        margin: 0 auto;
+        position: absolute;
+        top: -60px;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        transition: all 10s linear 0s;
+    }
+    .row1{
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(-1 * var(--bs-gutter-y));
+        margin-right: calc(-.5 * var(--bs-gutter-x));
+        margin-left: 50%;
+    }
+    .progress.blue .progress-bar{ border-color: #049dff; }
+    .progress.blue .progress-value{ color: #049dff; }
+    .progress.blue .progress-left .progress-bar{ animation: loading-2 1.5s linear forwards 1.8s; }
+    .progress.blue .inner-circle{ animation: loading-6 3.8s ease forwards; }
+    .progress.yellow .progress-bar{ border-color: #fdba04; }
+    .progress.yellow .progress-value{ color: #fdba04; }
+    .progress.yellow .progress-left .progress-bar{ animation: loading-3 1s linear forwards 1.8s; }
+    .progress.yellow .inner-circle{ animation: loading-7 3.8s ease forwards; }
+    .progress.pink .progress-bar{ border-color: #ed687c; }
+    .progress.pink .progress-value{ color: #ed687c; }
+    .progress.pink .progress-left .progress-bar{ animation: loading-4 0.4s linear forwards 1.8s; }
+    .progress.pink .inner-circle{ animation: loading-8 3.8s ease forwards; }
+    .progress.green .progress-bar{ border-color: #1abc9c; }
+    .progress.green .progress-value{ color: #1abc9c; }
+    .progress.green .progress-left .progress-bar{ animation: loading-5 1.2s linear forwards 1.8s; }
+    .progress.green .inner-circle{ animation: loading-9 3.8s ease forwards; }
+    @keyframes loading-1{
+        0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        }
+        100%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        }
+    }
+    @keyframes loading-2{
+        0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        }
+        100%{
+        -webkit-transform: rotate(144deg);
+        transform: rotate(144deg);
+        }
+    }
+    @keyframes loading-3{
+        0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        }
+        100%{
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        }
+    }
+    @keyframes loading-4{
+        0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        }
+        100%{
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+        }
+    }
+    @keyframes loading-5{
+         0%{
+         -webkit-transform: rotate(0deg);
+         transform: rotate(0deg);
+         }
+         100%{
+         -webkit-transform: rotate(126deg);
+         transform: rotate(126deg);
+         }
+    }
+    @keyframes loading-6{
+        0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        }
+        50%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        }
+        100%{
+        -webkit-transform: rotate(324deg);
+        transform: rotate(324deg);
+        }
+    }
+    @keyframes loading-7{
+        0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        }
+        50%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        }
+        100%{
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+        }
+    }
+    @keyframes loading-8{
+        0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        }
+        50%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        }
+        100%{
+        -webkit-transform: rotate(216deg);
+        transform: rotate(216deg);
+        }
+    }
+    @keyframes loading-9{
+        0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        }
+        50%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        }
+        100%{
+        -webkit-transform: rotate(306deg);
+        transform: rotate(306deg);
+        }
+    }
+    @media only screen and (max-width: 990px){
+        .progress{ margin-bottom: 20px; }
+    }
 </style>
 <main>
     <section class="py-5 text-center container">
@@ -230,6 +468,22 @@
                     </table>
                 </div>
                 <div class="col-md-6">
+                    <div class="container">
+                        <div class="row1">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="progress yellow">
+                                    <span class="progress-left">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <span class="progress-right">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <div class="inner-circle"></div>
+                                    <div class="progress-value"><span>100</span>%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -242,117 +496,98 @@
                             <div class="container margin1">
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-md-12 col-lg-10 col-xl-8">
-                                        <div style='overflow-y: auto; overflow-x:hidden; max-height: 60vh;' id='comentarios' class="card">
+                                        <div class="card">
                                             <div class="card-body p-4">
                                             <h4 class="text-center mb-4 pb-2">Comentários</h4>
-                                                @if($avaliacoes)
-                                                    @foreach($avaliacoes as $cada_avaliacao)
-                                                    
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="d-flex flex-start mt-4">
-                                                                <img class="rounded-circle shadow-1-strong me-3"
-                                                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(12).webp" alt="avatar" width="65"
-                                                                height="65" />
-                                                                <div class="flex-grow-1 flex-shrink-1">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="d-flex flex-start mt-4">
+                                                            <img class="rounded-circle shadow-1-strong me-3"
+                                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(12).webp" alt="avatar" width="65"
+                                                            height="65" />
+                                                            <div class="flex-grow-1 flex-shrink-1">
+                                                                <div>
+                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                        <p class="mb-1">
+                                                                            Natalie Smith <span class="small">- 2 hours ago</span>
+                                                                        </p>
+                                                                        <a href="#!"><i class="fas fa-reply fa-xs"></i><span class="small"> reply</span></a>
+                                                                    </div>
+                                                                    <p class="small mb-0">
+                                                                    The standard chunk of Lorem Ipsum used since the 1500s is
+                                                                    reproduced below for those interested. Sections 1.10.32 and
+                                                                    1.10.33.
+                                                                    </p>
+                                                                </div>
+                                                                <div class="d-flex flex-start mt-4">
+                                                                    <a class="me-3" href="#">
+                                                                    <img class="rounded-circle shadow-1-strong"
+                                                                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp" alt="avatar"
+                                                                        width="65" height="65" />
+                                                                    </a>
+                                                                    <div class="flex-grow-1 flex-shrink-1">
                                                                     <div>
                                                                         <div class="d-flex justify-content-between align-items-center">
-                                                                            <p class="mb-1">
-                                                                               <b>{{$cada_avaliacao->name}}</b>
-                                                                            </p>
-                                                                            @auth
-                                                                            <a id='abreModal-{{$cada_avaliacao->avaliacao_id}}' class='btn btn-success'><i class="fas fa-reply fa-xs"></i><span class="small">Responder</span></a>
-                                                                            @endauth
+                                                                        <p class="mb-1">
+                                                                            Lisa Cudrow <span class="small">- 4 hours ago</span>
+                                                                        </p>
                                                                         </div>
                                                                         <p class="small mb-0">
-                                                                            {{$cada_avaliacao->comentario}}
+                                                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                                                                        scelerisque ante sollicitudin commodo. Cras purus odio,
+                                                                        vestibulum in vulputate at, tempus viverra turpis.
                                                                         </p>
                                                                     </div>
-                                                                    {{-- <div class="bd-example">
-                                                                        <div class="dropdown show">
-                                                                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-{{$cada_avaliacao->avaliacao_id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                                           Respostas
-                                                                          </button>
-                                                                          <div class="dropdown-menu" id='reply-{{$cada_avaliacao->avaliacao_id}}'aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                                                            <a class="dropdown-item" href="#">Action</a>
-                                                                            <a class="dropdown-item" href="#">Another action</a>
-                                                                            <a class="dropdown-item" href="#">Something else here</a>
-                                                                          </div>
+                                                                    </div>
+                                                                </div>
+                                        
+                                                                <div class="d-flex flex-start mt-4">
+                                                                    <a class="me-3" href="#">
+                                                                    <img class="rounded-circle shadow-1-strong"
+                                                                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(29).webp" alt="avatar"
+                                                                        width="65" height="65" />
+                                                                    </a>
+                                                                    <div class="flex-grow-1 flex-shrink-1">
+                                                                    <div>
+                                                                        <div class="d-flex justify-content-between align-items-center">
+                                                                        <p class="mb-1">
+                                                                            Maggie McLoan <span class="small">- 5 hours ago</span>
+                                                                        </p>
                                                                         </div>
-                                                                    </div> --}}
-                                                                    {{-- <div class="d-flex flex-start mt-4">
-                                                                        <a class="me-3" href="#">
-                                                                        <img class="rounded-circle shadow-1-strong"
-                                                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp" alt="avatar"
-                                                                            width="65" height="65" />
-                                                                        </a>
-                                                                        <div class="flex-grow-1 flex-shrink-1">
+                                                                        <p class="small mb-0">
+                                                                        a Latin professor at Hampden-Sydney College in Virginia,
+                                                                        looked up one of the more obscure Latin words, consectetur
+                                                                        </p>
+                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                        
+                                                                <div class="d-flex flex-start mt-4">
+                                                                    <a class="me-3" href="#">
+                                                                    <img class="rounded-circle shadow-1-strong"
+                                                                        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar"
+                                                                        width="65" height="65" />
+                                                                    </a>
+                                                                    <div class="flex-grow-1 flex-shrink-1">
                                                                         <div>
                                                                             <div class="d-flex justify-content-between align-items-center">
                                                                             <p class="mb-1">
-                                                                                Lisa Cudrow <span class="small">- 4 hours ago</span>
+                                                                                John Smith <span class="small">- 6 hours ago</span>
                                                                             </p>
                                                                             </div>
                                                                             <p class="small mb-0">
-                                                                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-                                                                            scelerisque ante sollicitudin commodo. Cras purus odio,
-                                                                            vestibulum in vulputate at, tempus viverra turpis.
+                                                                            Autem, totam debitis suscipit saepe sapiente magnam officiis
+                                                                            quaerat necessitatibus odio assumenda, perferendis quae iusto
+                                                                            labore laboriosam minima numquam impedit quam dolorem!
                                                                             </p>
                                                                         </div>
-                                                                        </div>
-                                                                    </div> --}}
-
-                                                                    @if($cada_avaliacao->respostas)
-                                                                        @foreach($cada_avaliacao->respostas as $cada_resposta)
-                                                                            <div class="d-flex flex-start mt-4">
-                                                                                <a class="me-3" href="#">
-                                                                                <img class="rounded-circle shadow-1-strong"
-                                                                                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(29).webp" alt="avatar"
-                                                                                    width="65" height="65" />
-                                                                                </a>
-                                                                                <div class="flex-grow-1 flex-shrink-1">
-                                                                                <div>
-                                                                                    <div class="d-flex justify-content-between align-items-center">
-                                                                                    <p class="mb-1">
-                                                                                      <b> {{$cada_resposta->name}}</b>
-                                                                                    </p>
-                                                                                    </div>
-                                                                                    <p class="small mb-0">
-                                                                                        {{$cada_resposta->comentario}}
-                                                                                    </p>
-                                                                                </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        @endforeach
-                                                                    @endif
-                                                
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <hr>
-                                                    @endforeach
-
-                                                @else 
-                                                <div style='text-align:center'>
-                                                    <p>Opa! Não encontramos comentários.</p>
-                                                    <p>Seja o primeiro a comentar.</p>
-                                                <div>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        <div style='display:none;' class='card' id='form-resposta'>
-                                            <form id='resp' action ='{{route('adicionar-resposta')}}' method='POST' style='padding: 14px;'>
-                                                @csrf
-                                                <input type='hidden' name='id' value="{{$dados->local_id}}">
-                                                <input type="hidden" id="avaliacao-modal" name='avaliacao_id'>
-                                                <div class="form-group">
-                                                <label for="exampleFormControlTextarea1">Digite a sua resposta</label>
-                                                <textarea name='comentario' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                                 </div>
-                                                <button id='envia' style='margin-top: 2vh;'  class='btn btn-success'>Enviar</button>
-                                                <button id='voltar' style='margin-top: 2vh;'  class='btn btn-danger'>Voltar</button>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -462,11 +697,11 @@
                             </div>
                         </div> --}}
                     </div>
+                        <!-- se o usuario estiver logado podera deixar comentarios sobre o local -->
                         @auth
-                            <!-- se o usuario estiver logado podera deixar comentarios sobre o local -->
-                            <button id='enviarComentario' type="button" class="btn btn-primary margem_botao" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-primary margem_botao" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Adicionar Comentário
-                            </button>
+                        </button>
                         @endauth
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -514,28 +749,28 @@
                                         <h5>Diga se esse local é seguro!</h5>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input checked class="form-check-input" type="radio" name="nota_bairro" id="inlineRadio6" value="0">
-                                        <label class="form-check-label" for="inlineRadio6">0</label>
+                                        <input checked class="form-check-input" type="radio" name="nota" id="inlineRadio0" value="0">
+                                        <label class="form-check-label" for="inlineRadio0">0</label>
                                     </div>                                    
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="nota_bairro" id="inlineRadio7" value="1">
-                                        <label class="form-check-label" for="inlineRadio7">1</label>
+                                        <input class="form-check-input" type="radio" name="nota" id="inlineRadio1" value="1">
+                                        <label class="form-check-label" for="inlineRadio1">1</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="nota_bairro" id="inlineRadio8" value="2">
-                                        <label class="form-check-label" for="inlineRadio8">2</label>
+                                        <input class="form-check-input" type="radio" name="nota" id="inlineRadio2" value="2">
+                                        <label class="form-check-label" for="inlineRadio2">2</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="nota_bairro" id="inlineRadio9" value="3">
-                                        <label class="form-check-label" for="inlineRadio9">3</label>
+                                        <input class="form-check-input" type="radio" name="nota" id="inlineRadio3" value="3">
+                                        <label class="form-check-label" for="inlineRadio3">3</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="nota_bairro" id="inlineRadio10" value="4">
-                                        <label class="form-check-label" for="inlineRadio10">4</label>
+                                        <input class="form-check-input" type="radio" name="nota" id="inlineRadio4" value="4">
+                                        <label class="form-check-label" for="inlineRadio4">4</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="nota_bairro" id="inlineRadio11" value="5">
-                                        <label class="form-check-label" for="inlineRadio11">5</label>
+                                        <input class="form-check-input" type="radio" name="nota" id="inlineRadio5" value="5">
+                                        <label class="form-check-label" for="inlineRadio5">5</label>
                                     </div>
                                       
                                 </div>
@@ -546,7 +781,6 @@
                             </div>
                         </div>
                     </div>
-
                 </li>
             </ul>
         </div>
