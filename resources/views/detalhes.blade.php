@@ -584,29 +584,6 @@ svg circle:nth-child(2)
                     <div class="container">
                        
                         <div class="row1">
-                            {{-- <div class="col-md-3 col-sm-6">
-                                @php 
-                                    if($media_bairro >= 76){
-                                        $classe = "pink";
-                                    }else if($media <=  75 && $media > 50){
-                                        $classe ="yellow";
-                                    }elseif($media  <= 50 && $media > 25){
-                                        $classe = "green";
-                                    }else{
-                                        $classe = "blue";
-                                    }
-                                @endphp
-                                <div class="progress {{$classe}}">
-                                    <span class="progress-left">
-                                        <span class="progress-bar"></span>
-                                    </span>
-                                    <span class="progress-right">
-                                        <span class="progress-bar"></span>
-                                    </span>
-                                    <div class="inner-circle"></div>
-                                    <div class="progress-value"><span>{{$media_bairro}}</span>%</div>
-                                </div>
-                            </div> --}}
                             <div class="container1">
                                 <div class="card1">
                                   <div class="box1">
@@ -657,7 +634,7 @@ svg circle:nth-child(2)
                                                         <div class="col">
                                                             <div class="d-flex flex-start mt-4">
                                                                 <img class="rounded-circle shadow-1-strong me-3"
-                                                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(12).webp" alt="avatar" width="65"
+                                                                src="/img/user.png" alt="avatar" width="65"
                                                                 height="65" />
                                                                 <div class="flex-grow-1 flex-shrink-1">
                                                                     <div>
@@ -678,7 +655,7 @@ svg circle:nth-child(2)
                                                                             <div class="d-flex flex-start mt-4">
                                                                                 <a class="me-3" href="#">
                                                                                 <img class="rounded-circle shadow-1-strong"
-                                                                                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp" alt="avatar"
+                                                                                    src="/img/user.png" alt="avatar"
                                                                                     width="65" height="65" />
                                                                                 </a>
                                                                                 <div class="flex-grow-1 flex-shrink-1">
