@@ -118,7 +118,7 @@
          <header>
           <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
             <div class="container-fluid">
-              <a href="./">
+              <a href="/">
                 <img class="navbar-brand" src="/img/so_logo1.png" width="100" height="100">
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -136,8 +136,8 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('cadastro')}}">Cadastro</a>
-                  </li>  
-                  @endguest                                       
+                  </li>
+                  @endguest
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('locais')}}">Locais</a>
                   </li>
@@ -154,7 +154,7 @@
                       </a>
                     </form>
                   </li>
-                  @endauth                  
+                  @endauth
                 </ul>
                 <div class="d-flex">
                   <form class='d-flex'  role="search">
@@ -162,19 +162,19 @@
                     <input name='cidade' id='cidNome' autocomplete="off" class="form-control me-2" type="text" placeholder="Procure uma cidade" aria-label="Search">
                     {{-- <button id='busca' class="btn btn-outline-success" type="submit">Buscar</button> --}}
                     <div multiple="multiple" id='autocomplete' style="display: none;" class='list-group'>
-  
-                    </div>    
+
+                    </div>
                   </form>
                 </div>
 
               </div>
-          
+
             </div>
           </nav>
         </header>
             @yield('content')
         </div>
-         
+
    <div class="container">
         <footer class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -184,7 +184,7 @@
             <p class="text-center text-muted">&copy; @php echo date('Y') @endphp ProjectGuys, Corp</p>
         </footer>
     </div>
-            
+
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
 </html>
