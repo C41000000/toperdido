@@ -1,15 +1,15 @@
 @extends('layouts.main')
 
 @section('title', $dados->nome)
-@php 
-    
+@php
+
 @endphp
 @section('content')
 <script src='/js/detalhes.js'></script>
 <script src="https://partner.googleadservices.com/gampad/cookie.js?domain=bestjquery.com&callback=_gfp_s_&client=ca-pub-3311815518700050&cookie=ID%3D2f6f4dc27b67d162-22ab4a3f31d800a0%3AT%3D1668290470%3ART%3D1668290470%3AS%3DALNI_MYy0ekNlIFXEIwPpL4v5jd75j1VVA&gpic=UID%3D000009d825d86623%3AT%3D1668290470%3ART%3D1668290470%3AS%3DALNI_MYrvDgDOFy6P8OmyCANZD4fdnj14w&gpid_exp=1"></script>
 <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202211090101/show_ads_impl.js?bust=31070831" id="google_shimpl"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
- 
+
 <style>
     body{
         margin-top:20px;
@@ -332,10 +332,10 @@
         -webkit-transform: rotate(86deg);
         transform: rotate(86deg);
         }
-        100%{ 
+        100%{
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
-        } 
+        }
     }
     @keyframes loading-5{
          0%{
@@ -360,7 +360,7 @@
         -webkit-transform: rotate(108deg);
         transform: rotate(108deg);
         }
-    } 
+    }
     @keyframes loading-7{
         0%{
         -webkit-transform: rotate(0deg);
@@ -380,11 +380,11 @@
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
         }
-        
+
         100%{
         -webkit-transform: rotate(86deg);
-        transform: rotate(86deg); 
-        
+        transform: rotate(86deg);
+
         }
     }
     @keyframes loading-9{
@@ -582,7 +582,7 @@ svg circle:nth-child(2)
                 </div>
                 <div class="col-md-6">
                     <div class="container">
-                       
+
                         <div class="row1">
                             <div class="container1">
                                 <div class="card1">
@@ -607,7 +607,7 @@ svg circle:nth-child(2)
                                             <h2>{{$media_bairro}}<span style='color: rgb(0, 0, 0)'>%</span></h2>
                                           </div>
                                     </div>
-                                       
+
                                   </div>
                                 </div>
                               </div>
@@ -616,7 +616,7 @@ svg circle:nth-child(2)
                 </div>
             </div>
         </div>
-    
+
         <div class="review-list">
             <ul>
                 <li>
@@ -701,10 +701,10 @@ svg circle:nth-child(2)
                                             <button id='voltar' style='margin-top: 2vh;'  class='btn btn-danger'>Voltar</button>
                                         </form>
                                         </div>
-                                    </div>                                    
+                                    </div>
                                 </div>
                             </div>
-                        </section>                       
+                        </section>
                     </div>
                         <!-- se o usuario estiver logado podera deixar comentarios sobre o local -->
                         @auth
@@ -725,14 +725,14 @@ svg circle:nth-child(2)
                                         <textarea name='opiniao' class="form-control" placeholder="Digite sua opinição" id="floatingTextarea"></textarea>
                                         {{-- <label for="floatingTextarea"></label> --}}
                                     </div>
-                                    
+
                                     <div style="margin-top: 50px; margin-bottom: 10px;">
                                             <h5>Avalie o local de acordo com sua experiência!</h5>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input checked class="form-check-input" type="radio" name="nota" id="inlineRadio0" value="0">
                                         <label class="form-check-label" for="inlineRadio0">0</label>
-                                    </div>                                    
+                                    </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="nota" id="inlineRadio1" value="1">
                                         <label class="form-check-label" for="inlineRadio1">1</label>
@@ -760,12 +760,11 @@ svg circle:nth-child(2)
                                     <div class="form-check form-check-inline">
                                         <input checked class="form-check-input" type="radio" name="nota_bairro" id="inlineRadio6" value="0">
                                         <label class="form-check-label" for="inlineRadio6">0</label>
-                                    </div>                                
+                                    </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="nota_bairro" id="inlineRadio7" value="1">
                                         <label class="form-check-label" for="inlineRadio7">1</label>
-                                        <input class="form-check-input" type="radio" name="nota" id="inlineRadio1" value="1">
-                                        <label class="form-check-label" for="inlineRadio1">1</label>
+
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="nota_bairro" id="inlineRadio8" value="2">
@@ -782,7 +781,7 @@ svg circle:nth-child(2)
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="nota_bairro" id="inlineRadio11" value="5">
                                         <label class="form-check-label" for="inlineRadio11">5</label>
-                                    </div>  
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
