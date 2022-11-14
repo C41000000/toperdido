@@ -10,19 +10,6 @@
 <script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202211090101/show_ads_impl.js?bust=31070831" id="google_shimpl"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
  
-$(document).ready(function(){
-    $('.progress-value > span').each(function(){
-        $(this).prop('Counter',0).animate({
-            Counter: $(this).text()
-        },{
-            duration: 3500,
-            easing: 'swing',
-            step: function (now){
-                $(this).text(Math.ceil(now));
-            }
-        });
-    });
-});
 <style>
     body{
         margin-top:20px;
@@ -316,18 +303,18 @@ $(document).ready(function(){
         transform: rotate(0deg);
         }
         100%{
-        -webkit-transform: rotate(180deg);
-        transform: rotate(180deg);
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
         }
     }
     @keyframes loading-2{
         0%{
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
         }
         100%{
-        -webkit-transform: rotate(144deg);
-        transform: rotate(144deg);
+        -webkit-transform: rotate(72deg);
+        transform: rotate(72deg);
         }
     }
     @keyframes loading-3{
@@ -336,19 +323,19 @@ $(document).ready(function(){
         transform: rotate(0deg);
         }
         100%{
-        -webkit-transform: rotate(90deg);
-        transform: rotate(90deg);
+        -webkit-transform: rotate(72deg);
+        transform: rotate(72deg);
         }
     }
     @keyframes loading-4{
         0%{
+        -webkit-transform: rotate(86deg);
+        transform: rotate(86deg);
+        }
+        100%{ 
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
-        }
-        100%{
-        -webkit-transform: rotate(36deg);
-        transform: rotate(36deg);
-        }
+        } 
     }
     @keyframes loading-5{
          0%{
@@ -362,18 +349,18 @@ $(document).ready(function(){
     }
     @keyframes loading-6{
         0%{
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
+        -webkit-transform: rotate(72deg);
+        transform: rotate(72deg);
         }
         50%{
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
         }
         100%{
-        -webkit-transform: rotate(324deg);
-        transform: rotate(324deg);
+        -webkit-transform: rotate(108deg);
+        transform: rotate(108deg);
         }
-    }
+    } 
     @keyframes loading-7{
         0%{
         -webkit-transform: rotate(0deg);
@@ -393,13 +380,11 @@ $(document).ready(function(){
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
         }
-        50%{
-        -webkit-transform: rotate(180deg);
-        transform: rotate(180deg);
-        }
+        
         100%{
-        -webkit-transform: rotate(216deg);
-        transform: rotate(216deg);
+        -webkit-transform: rotate(86deg);
+        transform: rotate(86deg); 
+        
         }
     }
     @keyframes loading-9{
@@ -419,6 +404,134 @@ $(document).ready(function(){
     @media only screen and (max-width: 990px){
         .progress{ margin-bottom: 20px; }
     }
+
+
+
+.container1
+{
+  position:relative;
+  width:900px;
+  display:flex;
+  justify-content:space-around;
+}
+.container1 .card1
+{
+  position:relative;
+  width:250px;
+  /* background:linear-gradient(0deg,#1b1b1b,#222,#1b1b1b); */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:300px;
+  border-radius:4px;
+  text-align:center;
+  overflow:hidden;
+  transition:0.5s;
+}
+.container1 .card1:hover
+{
+  transform:translateY(-10px);
+  box-shadow:0 15px 35px rgb(255, 255, 255);
+}
+.container1 .card1:before
+{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-50%;
+  width:100%;
+  height:100%;
+  background:rgb(255, 255, 255);
+  pointer-events:none;
+  z-index:1;
+}
+.percent1
+{
+  position:relative;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  box-shadow: inset 0 0 50px rgb(255, 255, 255);
+  background:rgb(255, 255, 255);
+  z-index:1000;
+}
+.percent1 .num1
+{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+}
+.percent1 .num1 h2
+{
+  color:#000;
+  font-weight:700;
+  font-size:40px;
+  transition:0.5s;
+}
+.card1:hover .percent1 .num1 h2
+{
+  color:rgb(0, 0, 0);
+  font-size:60px;
+}
+.percent1 .num1 h2 span
+{
+  color:rgb(0, 0, 0);
+  font-size:24px;
+  transition:0.5s;
+}
+.card1:hover .percent1 .num1 h2 span
+{
+  color:#fff;
+}
+.text1
+{
+  position:relative;
+  color:#000;
+  margin-top:20px;
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  transition:0.5s;
+}
+.card1:hover .text1
+{
+  color:#000;
+}
+svg
+{
+  position:relative;
+  width:150px;
+  height:150px;
+  z-index:1000;
+}
+svg circle
+{
+  width:100%;
+  height:100%;
+  fill:none;
+  /* stroke:#39c15e; */
+  stroke-width:10;
+  stroke-linecap:round;
+  transform:translate(5px,5px);
+}
+svg circle:nth-child(2)
+{
+  stroke-dasharray:440;
+  stroke-dashoffset:440;
+}
+.card1:nth-child(1) svg circle:nth-child(2)
+{
+  stroke-dashoffset:calc(440 - (440 * 90) / 100);
+  stroke:#00ff43;
+}
+
 </style>
 <main>
     <section class="py-5 text-center container">
@@ -437,7 +550,7 @@ $(document).ready(function(){
         <div id="reviews" class="review-section">
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h4 class="m-0">{{$numero_total}} Avaliações</h4>
-
+                <h4 class='m_0'>Nível de segurança do local</h4>
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -469,9 +582,21 @@ $(document).ready(function(){
                 </div>
                 <div class="col-md-6">
                     <div class="container">
+                       
                         <div class="row1">
-                            <div class="col-md-3 col-sm-6">
-                                <div class="progress yellow">
+                            {{-- <div class="col-md-3 col-sm-6">
+                                @php 
+                                    if($media_bairro >= 76){
+                                        $classe = "pink";
+                                    }else if($media <=  75 && $media > 50){
+                                        $classe ="yellow";
+                                    }elseif($media  <= 50 && $media > 25){
+                                        $classe = "green";
+                                    }else{
+                                        $classe = "blue";
+                                    }
+                                @endphp
+                                <div class="progress {{$classe}}">
                                     <span class="progress-left">
                                         <span class="progress-bar"></span>
                                     </span>
@@ -479,9 +604,36 @@ $(document).ready(function(){
                                         <span class="progress-bar"></span>
                                     </span>
                                     <div class="inner-circle"></div>
-                                    <div class="progress-value"><span>100</span>%</div>
+                                    <div class="progress-value"><span>{{$media_bairro}}</span>%</div>
                                 </div>
-                            </div>
+                            </div> --}}
+                            <div class="container1">
+                                <div class="card1">
+                                  <div class="box1">
+                                    <div class="percent1">
+                                      <svg>
+                                        @php
+                                            if($media_bairro >=75 ){
+                                                $cor = "rgb(27, 190, 108)";
+                                            }else if($media_bairro < 75 && $media_bairro >= 50){
+                                                $cor = "rgb(232, 232, 8)";
+                                            }else if($media_bairro <50 && $media_bairro > 25){
+                                                $cor = "rgb(232, 120, 8)";
+                                            }else{
+                                                $cor = "red";
+                                            }
+                                        @endphp
+                                        <circle style="stroke:{{$cor}};" cx="70" cy="70" r="70"></circle>
+                                        <circle style="stroke:{{$cor}};" cx="70" cy="70" r="70"></circle>
+                                        <svg>
+                                          <div class="num1">
+                                            <h2>{{$media_bairro}}<span style='color: rgb(0, 0, 0)'>%</span></h2>
+                                          </div>
+                                    </div>
+                                       
+                                  </div>
+                                </div>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -501,53 +653,54 @@ $(document).ready(function(){
                                             <h4 class="text-center mb-4 pb-2">Comentários</h4>
                                             @if($avaliacoes)
                                                 @foreach($avaliacoes as $cada_avaliacao)
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="d-flex flex-start mt-4">
-                                                            <img class="rounded-circle shadow-1-strong me-3"
-                                                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(12).webp" alt="avatar" width="65"
-                                                            height="65" />
-                                                            <div class="flex-grow-1 flex-shrink-1">
-                                                                <div>
-                                                                    <div class="d-flex justify-content-between align-items-center">
-                                                                        <p class="mb-1">
-                                                                            <b>{{$cada_avaliacao->name}}</b>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="d-flex flex-start mt-4">
+                                                                <img class="rounded-circle shadow-1-strong me-3"
+                                                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(12).webp" alt="avatar" width="65"
+                                                                height="65" />
+                                                                <div class="flex-grow-1 flex-shrink-1">
+                                                                    <div>
+                                                                        <div class="d-flex justify-content-between align-items-center">
+                                                                            <p class="mb-1">
+                                                                                <b>{{$cada_avaliacao->name}}</b>
+                                                                            </p>
+                                                                            @auth
+                                                                                <a id='abreModal-{{$cada_avaliacao->avaliacao_id}}' class='btn btn-success'><i class="fas fa-reply fa-xs"></i><span class="small">Responder</span></a>
+                                                                            @endauth
+                                                                        </div>
+                                                                        <p class="small mb-0">
+                                                                            {{$cada_avaliacao->comentario}}
                                                                         </p>
-                                                                        @auth
-                                                                            <a id='abreModal-{{$cada_avaliacao->avaliacao_id}}' class='btn btn-success'><i class="fas fa-reply fa-xs"></i><span class="small">Responder</span></a>
-                                                                        @endauth
                                                                     </div>
-                                                                    <p class="small mb-0">
-                                                                        {{$cada_avaliacao->comentario}}
-                                                                    </p>
-                                                                </div>
-                                                                @if($cada_avaliacao->respostas)
-                                                                    @foreach($cada_avaliacao->respostas as $cada_resposta)
-                                                                        <div class="d-flex flex-start mt-4">
-                                                                            <a class="me-3" href="#">
-                                                                            <img class="rounded-circle shadow-1-strong"
-                                                                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp" alt="avatar"
-                                                                                width="65" height="65" />
-                                                                            </a>
-                                                                            <div class="flex-grow-1 flex-shrink-1">
-                                                                                <div>
-                                                                                    <div class="d-flex justify-content-between align-items-center">
-                                                                                    <p class="mb-1">
-                                                                                        <b> {{$cada_resposta->name}}</b>
-                                                                                    </p>
+                                                                    @if($cada_avaliacao->respostas)
+                                                                        @foreach($cada_avaliacao->respostas as $cada_resposta)
+                                                                            <div class="d-flex flex-start mt-4">
+                                                                                <a class="me-3" href="#">
+                                                                                <img class="rounded-circle shadow-1-strong"
+                                                                                    src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp" alt="avatar"
+                                                                                    width="65" height="65" />
+                                                                                </a>
+                                                                                <div class="flex-grow-1 flex-shrink-1">
+                                                                                    <div>
+                                                                                        <div class="d-flex justify-content-between align-items-center">
+                                                                                        <p class="mb-1">
+                                                                                            <b> {{$cada_resposta->name}}</b>
+                                                                                        </p>
+                                                                                        </div>
+                                                                                        <p class="small mb-0">
+                                                                                            {{$cada_resposta->comentario}}
+                                                                                        </p>
                                                                                     </div>
-                                                                                    <p class="small mb-0">
-                                                                                        {{$cada_resposta->comentario}}
-                                                                                    </p>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
-                                                                    @endforeach
-                                                                @endif
+                                                                        @endforeach
+                                                                    @endif
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                    <hr>
                                                 @endforeach
                                             @else
                                                 <div style='text-align:center'>

@@ -41,7 +41,8 @@ class ToPerdidoController extends Controller
             'avaliacoes' => false,
             'numero_total' => 0,
             'todas_notas' => $todas_notas,
-            'media' => 0
+            'media' => 0,
+            'media_bairro' => 0
         ]);
     }
 
@@ -166,11 +167,12 @@ class ToPerdidoController extends Controller
         $media = 0;
         $soma = 0;
         $todas_notas = [0,0,0,0,0,0];
-        
+        $notas_bairro = 0;
         foreach($todas_avaliacoes as $key => $cada_avaliacao){
             $soma += $cada_avaliacao->nota;
             $todas_notas[$cada_avaliacao->nota]+=1;
             $todas_avaliacoes[$key]->respostas = $model_resposta->buscaTodasRepostas($cada_avaliacao->avaliacao_id);
+            $notas_bairro += $cada_avaliacao->nota_bairro;
         }
 
         krsort($todas_notas);
@@ -182,14 +184,16 @@ class ToPerdidoController extends Controller
         $numero_total = count($todas_avaliacoes);
         
         $media = ($soma !=0 && $numero_total) ?  ($soma / $numero_total) : 0;
-
+        $notas_bairro = ($notas_bairro != 0 && $numero_total) ? ($notas_bairro / $numero_total) : 0;
+        $notas_bairro = number_format((($notas_bairro * 100) / 5), 0, ',');
         
         return view('detalhes',[
             'dados' => array_shift($dados),
             'avaliacoes' => $todas_avaliacoes,
             'numero_total' => $numero_total,
             'todas_notas' => $todas_notas,
-            'media' => $media
+            'media' => $media,
+            'media_bairro' => $notas_bairro
         ]);
     }
 
