@@ -16,6 +16,9 @@
         margin-top: 80%;
         position: static !important;
     }
+    body {
+      overflow: hidden;
+    }
 </style>
 <script>
 

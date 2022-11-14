@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'nome do local')
+@section('title', $dados->nome)
 @php 
     
 @endphp
