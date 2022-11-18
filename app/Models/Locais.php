@@ -10,7 +10,7 @@ class Locais extends Model
 {
     use HasFactory;
     protected $table = "locais";
-    protected $fillable = ['nome', 'rua_id', 'img', 'numero'];
+    protected $fillable = ['nome', 'rua_id', 'numero'];
     public $timestamps = false;
     protected $primaryKey = "local_id";
 
@@ -69,7 +69,6 @@ class Locais extends Model
             r.rua_nome,
             b.bairro_nome,
             c.cidade_nome,
-            l.img,
             l.numero
         FROM locais l
         INNER JOIN rua r ON r.rua_id = l.rua_id
@@ -89,7 +88,6 @@ class Locais extends Model
                 l.local_id,
                 l.nome,
                 l.numero,
-                l.img,
                 c.cidade_nome,
                 b.bairro_nome
             FROM locais l 
@@ -128,7 +126,6 @@ class Locais extends Model
             l.local_id,
             l.nome,
             r.rua_nome,
-            l.img
             FROM locais l 
             INNER JOIN rua r ON r.rua_id = l.rua_id
             INNER JOIN bairro b ON b.bairro_id = r.bairro_id

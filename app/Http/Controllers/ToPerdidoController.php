@@ -158,7 +158,6 @@ class ToPerdidoController extends Controller
         $locais = Locais::create([
             'nome' => $nome,
             'rua_id' => $rua_criada->rua_id,
-            'img' => '/img/global-settings.png',
             'numero' => $numero
         ]);
         $locais = $model_local->buscaUltimoLocalCriado();

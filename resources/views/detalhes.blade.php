@@ -563,9 +563,6 @@ svg circle:nth-child(2)
                 </div>
                 <div class="carousel-inner">
                     @foreach($imagens as $cada_imagem)
-                    @php
-                        // dd($cada_imagem);
-                    @endphp
                         <div class="carousel-item active">
                             <img src="/img/img-local/{{$cada_imagem->caminho}}" class="bd-placeholder-img outline" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false" width="100%" height="100%"><rect width="100%" height="100%" fill="#777">
                         </div>
@@ -581,7 +578,7 @@ svg circle:nth-child(2)
                 </button>
               </div>
             @else
-                <img src="{{$dados->img}}" class="d-block mx-lg-auto ajuste" alt="" width="800" height="720" loading="lazy">
+                <img src="/img/global-settings.png" class="d-block mx-lg-auto ajuste" alt="" width="800" height="720" loading="lazy">
             @endif
         </div>
     </div>
