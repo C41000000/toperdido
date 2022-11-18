@@ -24,6 +24,7 @@ Route::get('/detalhes/{local}', [ToPerdidoController::class, 'detalhes'])->name(
 Route::get('/informacoes/{local}', [ToPerdidoController::class, 'buscaLocaisAutocomplete'])->name('informacoes');
 Route::get('/adicionar-comentario', [ToPerdidoController::class, 'adicionarComentario'])->name('adicionar-comentario');
 Route::post('/adicionar-resposta', [ToPerdidoController::class, 'adicionarResposta'])->name('adicionar-resposta');
+Route::post('/adicionar-imagem', [ToPerdidoController::class, 'adicionarImagem'])->name('adicionar-imagem');
 
 Route::get('/cadastro', function(){
     return view('auth.register');

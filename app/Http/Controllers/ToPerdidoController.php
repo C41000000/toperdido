@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Support\Facades\Hash;
+
 use App\Models\User;
 use App\Models\Locais;
 use App\Models\Rua;
@@ -11,10 +12,10 @@ use App\Models\Cidade;
 use App\Models\Estado;
 use App\Models\Avaliacoes;
 use App\Models\Resposta;
-
-
-
+use App\Models\Verificado;
+use App\Models\ImagemLocal;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 
 class ToPerdidoController extends Controller
 {
@@ -25,8 +26,9 @@ class ToPerdidoController extends Controller
 
     public function buscaLocal(Request $request){
         $locais = new Locais();
-        
+        $model_verificado = new Verificado();
         $local = $locais->retornaInformacoes($request->all());
+        $user = Auth::id();
         if(!$local){
             $local = $this->criaCoisas($request->all());   
         }
@@ -36,13 +38,21 @@ class ToPerdidoController extends Controller
             $todas_notas[$key] = 0;
         }
         
+        $verificado = false;
+        if($user){
+
+            $verificado = $model_verificado->retornaSeVerificado($user,$local[0]->local_id);
+        }
         return view('detalhes', [
             'dados' => array_shift($local),
             'avaliacoes' => false,
             'numero_total' => 0,
             'todas_notas' => $todas_notas,
             'media' => 0,
-            'media_bairro' => 0
+            'media_bairro' => 0,
+            'verificado' => $verificado,
+            'imagens' => false
+            
         ]);
     }
 
@@ -161,8 +171,22 @@ class ToPerdidoController extends Controller
         $model_local = new locais();
         $model_avaliacoes = new Avaliacoes();
         $model_resposta = new Resposta();
-        
+        $model_verificado = new Verificado();
+        $model_imagem_local = new ImagemLocal();
+
+        $user =  Auth::id();
+
+        $verificado = false;
+        if($user){
+
+            $verificado = $model_verificado->retornaSeVerificado($user, $local);
+        }
+
         $dados = $model_local->bucasDadosLocal($local);
+        $dados = array_shift($dados);
+        $imagens = $model_imagem_local->buscaImagensDoLocal($local);
+
+
         $todas_avaliacoes = $model_avaliacoes->buscaTodasAvaliacoesLocal($local);
         $media = 0;
         $soma = 0;
@@ -188,12 +212,14 @@ class ToPerdidoController extends Controller
         $notas_bairro = number_format((($notas_bairro * 100) / 5), 0, ',');
         
         return view('detalhes',[
-            'dados' => array_shift($dados),
+            'dados' =>$dados,
             'avaliacoes' => $todas_avaliacoes,
             'numero_total' => $numero_total,
             'todas_notas' => $todas_notas,
             'media' => $media,
-            'media_bairro' => $notas_bairro
+            'media_bairro' => $notas_bairro,
+            'verificado' => $verificado,
+            'imagens' => $imagens? $imagens : false,
         ]);
     }
 
@@ -235,6 +261,30 @@ class ToPerdidoController extends Controller
         ]);
 
         return redirect()->route('detalhes', $dados['id']);
+    }
+
+    public function adicionarImagem(Request $request){
+        $user = Auth::id();
+        $local = $request->local_id;
+        $imagem = new ImagemLocal();
+        $file = $request->file('image');
+        $imagem->local_id = $request->local_id;
+        
+        
+        if($request->hasFile('image') ** $request->file('image')->isValid()){
+            $requestImage = $request->image;
+            $extension = $requestImage->extension();
+            
+            $imageName = md5($requestImage->getClientOriginalName(). strtotime("now"));
+            $imageName .= "." . $extension;
+            
+            $requestImage->move(public_path('img/img-local'), $imageName);
+
+            $imagem->caminho = $imageName;
+            $imagem->save();
+        }
+        return redirect()->route('detalhes', $local)->with("msg", "Imagem salva com sucesso!");
+
     }
 
     public function pr($string, $die = 1){

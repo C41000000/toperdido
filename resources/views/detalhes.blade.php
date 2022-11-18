@@ -2,7 +2,7 @@
 
 @section('title', $dados->nome)
 @php
-
+    
 @endphp
 @section('content')
 <script src='/js/detalhes.js'></script>
@@ -531,9 +531,20 @@ svg circle:nth-child(2)
   stroke-dashoffset:calc(440 - (440 * 90) / 100);
   stroke:#00ff43;
 }
+    .msg{
+        background-color: #D4EDDA;
+        color: #4ba860;
+        border: 1px solid #C3E6CB;
+        width: 100%;
+        margin-top: 3%;
+        padding: 10px;
 
+    }
 </style>
 <main>
+    @if(session('msg'))
+        <p class="msg">{{session('msg')}}</p>
+    @endif
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
@@ -543,9 +554,50 @@ svg circle:nth-child(2)
     </section>
     <div>
         <div>
-            <img src="{{$dados->img}}" class="d-block mx-lg-auto ajuste" alt="" width="800" height="720" loading="lazy">
+            @if($imagens)
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    @foreach($imagens as $cada_imagem)
+                    @php
+                        // dd($cada_imagem);
+                    @endphp
+                        <div class="carousel-item active">
+                            <img src="/img/img-local/{{$cada_imagem->caminho}}" class="bd-placeholder-img outline" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveaspectratio="xMidYMid slice" focusable="false" width="100%" height="100%"><rect width="100%" height="100%" fill="#777">
+                        </div>
+                    @endforeach
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Próximo</span>
+                </button>
+              </div>
+            @else
+                <img src="{{$dados->img}}" class="d-block mx-lg-auto ajuste" alt="" width="800" height="720" loading="lazy">
+            @endif
         </div>
     </div>
+    @auth
+    @if(!empty($verificado))
+    <div class="">
+        <span>Adicione uma imagem</span>
+        <form action="{{route('adicionar-imagem')}}" method="POST" enctype="multipart/form-data" >
+            @csrf
+            <input type="file" name="image" class="form-control-file">
+            <input type='hidden' name='local_id' value="{{$dados->local_id}}">
+            <button type='submit'>Enviar</button>
+        </form>
+    </div>
+    @endif
+    @endauth
     <div class="container">
         <div id="reviews" class="review-section">
             <div class="d-flex align-items-center justify-content-between mb-4">

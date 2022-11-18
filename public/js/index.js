@@ -82,4 +82,7 @@ $(document).ready(function(){
         $('#coisa').removeClass('collapse');
     }
 
+    setTimeout(function(){
+        $('.msg').remove();
+    },7000)
 });
